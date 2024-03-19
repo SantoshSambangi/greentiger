@@ -1,15 +1,11 @@
 .vcuContainer {
-  /* max-height: 100%; */
   height: 100vh;
-  /* height: calc(100vh - 200px ); */
   width: 100%;
+  background-color: #f2f2f2;
   flex-wrap: wrap;
-  /* background-color: red; */
-  /* background-color: white; */
 }
 
 /* Vcu Header styles */
-
 .vcuHeader {
   display: flex;
   justify-content: space-between;
@@ -18,14 +14,52 @@
   padding: 0px 10px;
 }
 
+.vcuRightBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  padding: 0px 30px;
+}
+
 .logo {
-  width: 300px;
+  width: 200px;
 }
 
 .logoImg {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.title h1 {
+  font-family: "Segoe-UI-bold";
+}
+
+.vehicleNumbers {
+  border: none;
+  height: 40px;
+  width: 100px;
+  background-color: #00aa13;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.dateRange {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.dateRange input {
+  background-color: lightgray;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
 }
 
 /* filter styles */
@@ -35,22 +69,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  padding: 0px 10px;
-  /* background-color: salmon; */
-}
-
-.filter {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f1f1f1;
-  border: 1px solid gray;
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 20px;
-  align-items: center;
-  width: 20%;
-  border-radius: 10px;
+  margin-top: 5px;
+  padding: 0px 12px;
 }
 
 /* button styles */
@@ -63,41 +83,44 @@
 
 .btnContainer button {
   width: 200px;
-  background-color: red;
-  color: black;
+  background-color: white;
+  color: #40f416;
+  font-weight: bold;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btnContainer button:hover {
-  width: 200px;
-  background-color: green;
+  /* width: 200px; */
+  background-color: #40f416;
   color: white;
-  transition: 1s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 
 /* fliping card Styles */
 
-.bottomContainer{
+.bottomContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 10px 0px;
+  gap: 10px;
+  padding: 5px 0px;
 }
 
 .cardContainer {
+  padding-top: 5px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   /* flex-wrap: wrap; */
-  gap: 20px;
+  gap: 10px;
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  max-width: 100%;
-  /* width: 100vw; */
-  /* margin: 30px 30px; */
-  /* overflow: hidden; */
   margin-inline: 30px;
-  /* auto auto auto auto auto auto; */
-  /* max-width: 1400px;
-  width: 100%;
-  overflow-x: scroll; */
+}
+
+.frontContent h1 {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }

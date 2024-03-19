@@ -3,6 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../src/assets/fonts/Segoe\ UI.ttf");
+}
+@font-face {
+  font-family: "Segoe-UI-bold";
+  src: url("../src/assets/fonts/Segoe\ UI\ Bold.ttf");
+}
 
 .MuiButtonBase-root {
   width: 20px !important;

@@ -8,6 +8,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -48,7 +49,9 @@ const LoginPage = () => {
             placeholder="Email address"
             onChange={(e) => setEmail(e.target.value)}
           />
+          {error ? <small>{error.msg}</small> : ""}
         </div>
+
         <div className="form-group">
           <label>Password</label>
           <input
@@ -57,9 +60,9 @@ const LoginPage = () => {
             type="password"
             required
             placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+            onChange={(e) => setPassword(e.target.value)}/>
         </div>
+
         <button type="submit" onClick={onLogin}>
           Login
         </button>

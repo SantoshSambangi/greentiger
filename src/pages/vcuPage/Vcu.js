@@ -6,6 +6,17 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import FlipCard from "../../components/flipCard/FlipCard";
 import CustomModal from "../../components/modal/Modal";
 import DateSelectionPicker from "../../components/dateRangePicker/DateSelectionPicker";
+// import BarChart from "../../components/chartGraphs/BarChart";
+import { VscSearch } from "react-icons/vsc";
+import FilterBox from "../../components/filterBox/FilterBox";
+import Card from "../../components/cards/Card";
+// import BarChart from "../../components/chartGraphs/BarChart";
+import ExpChart from "../../components/chartGraphs/ExpChart";
+import BarChart from "../../components/chartGraphs/BarChart";
+import PieChart from "../../components/chartGraphs/PieChart";
+import LineChart from "../../components/chartGraphs/LineChart";
+// import Card from "../../components/cards/Card";
+
 const Vcu = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(null);
@@ -64,6 +75,8 @@ const Vcu = () => {
     // navigate("/trial");
   };
 
+
+
   return (
     <div className="vcuContainer">
       {/* modal */}
@@ -87,65 +100,73 @@ const Vcu = () => {
           />
         </div>
 
-        <div className="title">
-          <h1>VCU Details</h1>
-        </div>
+        <div className="vcuRightBlock">
+          <div className="title">
+            <h1>Vehicle Details</h1>
+          </div>
 
-        <div>
+          {/* <div>
           <DateSelectionPicker />
+        </div> */}
+
+          <div className="vehicleNumbers">
+            <h1>2</h1>
+            <p>Vehicles</p>
+          </div>
+
+          <div className="dateRange">
+            <input type="date"/>
+            <input type="date" />
+          </div>
         </div>
       </div>
 
       {/* Vcu filter */}
 
       <div className="filterContainer">
-        {Object.keys(filterData).map((tab, index) => (
-          <div
-            key={index}
-            className="filter"
-            onClick={() => handleOpenModal(tab)}
-          >
-            <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
-
-            <span>
-              <FilterAltIcon />
-            </span>
-          </div>
-        ))}
+        <FilterBox  title={<h4>State</h4>} />
+        <FilterBox title={<h4>Locality</h4>} />
+        <FilterBox title={<h4>Device Id</h4>} />
+        <FilterBox title={<h4>Brand</h4>} />
+        <FilterBox title={<h4>Modal</h4>} />
+        <FilterBox title={<h4>Age</h4>} />
+        <FilterBox title={<h4>Gender</h4>} />
+        <FilterBox title={<h4>Profession</h4>} />
       </div>
+
+           
 
       {/* Cards Container */}
 
       <div className="bottomContainer">
         <div className="cardContainer">
-          <FlipCard
+          
+          <Card
             frontContent={
-              <div>
-                <div className="num">0.0 </div>
-                <div> Avg Motor Temp (&deg;C)</div>
+              <div className="frontContent">
+                <h1>0</h1>
+                <p>Total Distance (KM)</p>
               </div>
             }
-            backContent={<p>Back Content</p>}
+            backContent={<ExpChart />}
           />
-
-          <FlipCard
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<BarChart/>}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<PieChart />}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<LineChart/>}
+          />
+          <Card
             frontContent={<h2>Front Content</h2>}
             backContent={<p>Back Content</p>}
           />
-
-          <FlipCard
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <FlipCard
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <FlipCard
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <FlipCard
+          <Card
             frontContent={<h2>Front Content</h2>}
             backContent={<p>Back Content</p>}
           />

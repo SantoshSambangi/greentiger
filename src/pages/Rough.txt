@@ -1,0 +1,65 @@
+ {/* <div className="filterBox">
+        <div className="filterTitle">
+          <span>State</span>
+          <span>🧹</span>
+        </div>
+
+        <div className="filterSearch">
+          <VscSearch size={20} />
+          <input type="text" size="10" placeholder="Search.." />
+        </div>
+
+        <div className="filterCheck">
+          <input type="checkbox" />
+          <input type="checkbox" />
+        </div>
+      </div> */}
+
+      {/* <FlipCard
+            frontContent={
+              <div>
+                <div className="num">0.0 </div>
+                <div> Avg Motor Temp (&deg;C)</div>
+              </div>
+            }
+            backContent={<p>Back Content</p>}
+          />
+
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          /> */}
+
+
+          {/* <div className="filterContainer">
+        {Object.keys(filterData).map((tab, index) => (
+          <div
+            key={index}
+            className="filter"
+            onClick={() => handleOpenModal(tab)}
+          >
+            <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
+
+            <span>
+              <FilterAltIcon />
+            </span>
+          </div>
+        ))}
+      </div> */}
