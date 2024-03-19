@@ -1,0 +1,10 @@
+.homeContainer {
+  height: calc(100vh - 12vh);
+  /* background-color: skyblue; */
+  background: linear-gradient(to top, #4facfe, #00f2fe);
+}
+.gtTitle {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
