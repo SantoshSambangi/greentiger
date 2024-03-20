@@ -94,7 +94,7 @@ const VehicleDetails = () => {
         filterData={filterData} // Pass the filterData prop here
       /> */}
 
-      {/* vcu header */}
+      {/* vehicle header */}
 
       <div className="vcuHeader">
         <div className="logo">
@@ -115,7 +115,7 @@ const VehicleDetails = () => {
         </div> */}
 
           <div className="vehicleNumbers">
-            <h1>2</h1>
+            <h2>2</h2>
             <p>Vehicles</p>
           </div>
 
@@ -135,7 +135,7 @@ const VehicleDetails = () => {
         </div>
       </div>
 
-      {/* Vcu filter */}
+      {/* vehicle filter */}
 
       <div className="filterContainer">
         <FilterBox title={<h4>State</h4>} />
@@ -150,7 +150,7 @@ const VehicleDetails = () => {
 
       {/* Cards Container */}
 
-      <div className="bottomContainer">
+      <div className="cardMainContainer">
         <div className="cardContainer">
           <Card
             frontContent={
@@ -186,10 +186,11 @@ const VehicleDetails = () => {
         {/* Button container */}
 
         <div className="btnContainer">
-          <button  onClick={redirectToVehicle}>Vehicle Details</button>
+          <button onClick={redirectToVehicle}>Vehicle Details</button>
           <button onClick={redirectToBms}>BMS Details</button>
           <button onClick={redirectToVcu}>VCU Details</button>
         </div>
+        
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ const FilterBox = (props) => {
     
         <div className="filterBox">
             <div className="filterTitle">
-                <span>{title}</span>
+                <span className=''>{title}</span>
                 <span><CiEraser/></span>
             </div>
 

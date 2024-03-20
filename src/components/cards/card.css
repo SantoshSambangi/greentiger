@@ -25,7 +25,7 @@
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  /* gap: 20px; */
   justify-content: center;
   align-items: center;
 }
@@ -51,4 +51,6 @@
   background-color: white;
   color: black;
   transform: rotateY(180deg);
+  padding: 8px;
+  border-radius: 8px;
 }

@@ -17,7 +17,7 @@
 .vcuRightBlock {
   display: flex;
   justify-content: space-between;
-  gap: 50px;
+  gap: 80px;
   align-items: center;
   padding: 0px 30px;
 }
@@ -38,17 +38,23 @@
 
 .vehicleNumbers {
   border: none;
-  height: 40px;
+  height: 50px;
   width: 100px;
   background-color: #00aa13;
-  padding: 30px 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
+.vehicleNumbers h2,
+p {
+  font-family: "Segoe UI";
+  font-weight: 600;
+  color: white;
+}
 .dateRange {
   display: flex;
   flex-direction: column;
@@ -85,9 +91,13 @@
   width: 200px;
   background-color: white;
   color: #40f416;
-  font-weight: bold;
-  font-family: "Segoe-UI-bold";
+  /* font-weight: bold; */
+  font-family: "Segoe UI";
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  font-size: 16px;
+  padding: 8px 0px;
+  border-radius: 8px;
 }
 
 .btnContainer button:hover {
@@ -99,15 +109,15 @@
 
 /* fliping card Styles */
 
-.bottomContainer {
+/* .cardMainContainer {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 5px 0px;
-}
+  padding: 4px 0px;
+} */
 
 .cardContainer {
-  padding-top: 5px;
+  padding: 8px 0px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   /* flex-wrap: wrap; */
