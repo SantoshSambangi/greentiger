@@ -38,13 +38,13 @@ const NavBar = () => {
         <div className="navContant">
           <ul className="navItems">
             <li>
-              <Link to="/vcu">VCU</Link>
+              <Link to="/vehicledetails">Vehicle Details</Link>
             </li>
             <li>
-              <Link to="/bms">BMS</Link>
+              <Link to="/bms">BMS Details</Link>
             </li>
             <li>
-              <Link to="/trail">Trail</Link>
+              <Link to="/vcu">VCU Details</Link>
             </li>
           </ul>
         </div>

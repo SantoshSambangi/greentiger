@@ -1,0 +1,127 @@
+.vcuContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: #f2f2f2;
+  flex-wrap: wrap;
+}
+
+/* Vcu Header styles */
+.vcuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: aqua; */
+  padding: 0px 10px;
+}
+
+.vcuRightBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.logo {
+  width: 200px;
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.title h1 {
+  font-family: "Segoe-UI-bold";
+}
+
+.vehicleNumbers {
+  border: none;
+  height: 40px;
+  width: 100px;
+  background-color: #00aa13;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.dateRange {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.dateRange input {
+  background-color: lightgray;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+/* filter styles */
+
+.filterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  padding: 0px 12px;
+}
+
+/* button styles */
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.btnContainer button {
+  width: 200px;
+  background-color: white;
+  color: #40f416;
+  font-weight: bold;
+  font-family: "Segoe-UI-bold";
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btnContainer button:hover {
+  /* width: 200px; */
+  background-color: #40f416;
+  color: white;
+  transition: 0.8s ease-in-out;
+}
+
+/* fliping card Styles */
+
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 5px 0px;
+}
+
+.cardContainer {
+  padding-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  /* flex-wrap: wrap; */
+  gap: 10px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 30px;
+}
+
+.frontContent h1 {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}

@@ -65,3 +65,24 @@
           </div>
         ))}
       </div> */}
+
+  const Navbar = () => {
+    
+  const location = useLocation();
+
+  return (
+    <nav>
+      <ul>
+        <li className={location.pathname === '/' ? 'active' : ''}>
+          <Link to="/">Home</Link>
+        </li>
+        <li className={location.pathname === '/about' ? 'active' : ''}>
+          <Link to="/about">About</Link>
+        </li>
+        {/* Add more Link items for other routes */}
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;

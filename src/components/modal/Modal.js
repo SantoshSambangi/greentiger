@@ -50,7 +50,6 @@ export default function CustomModal({ isOpen, handleClose, title, data, onSubmit
     return processedData;
   };
 
-
   return (
     <Modal open={isOpen} onClose={handleClose}>
       <div className="modal">

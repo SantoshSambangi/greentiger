@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import "../cards/card.css";
 
-const Card = ({ frontContent, backContent }) => {
+const Card = (props) => {
+
+  const {frontContent, backContent} = props;
     
   const [isFlipped, setIsFlipped] = useState(false);
 
