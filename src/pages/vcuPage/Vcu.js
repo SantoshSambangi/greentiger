@@ -75,7 +75,20 @@ const Vcu = () => {
     // navigate("/trial");
   };
 
+  const [date,setDate] = useState({
+    startDate : "",
+    endDate: "",
+  })
+    console.log(date)
+    
+  // const getDateRange = (e) => {
+  //     setDate({
+  //         startDate : e.target.value,
+  //         endDate : e.target.value
+  //     })
+  // }
 
+  //   console.log(date.startDate, date.endDate)
 
   return (
     <div className="vcuContainer">
@@ -115,8 +128,8 @@ const Vcu = () => {
           </div>
 
           <div className="dateRange">
-            <input type="date"/>
-            <input type="date" />
+            <input type="date" value={date.startDate} onChange={(e)=> setDate({...date,startDate: e.target.value}) }/>
+            <input type="date" value={date.endDate} onChange={(e)=> setDate({...date,endDate: e.target.value}) } />
           </div>
         </div>
       </div>
@@ -152,7 +165,7 @@ const Vcu = () => {
           />
           <Card
             frontContent={<h2>Front Content</h2>}
-            backContent={<BarChart/>}
+            // backContent={<BarChart/>}
           />
           <Card
             frontContent={<h2>Front Content</h2>}

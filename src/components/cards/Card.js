@@ -9,8 +9,13 @@ const Card = ({ frontContent, backContent }) => {
     setIsFlipped(!isFlipped);
   };
 
+  const notFlipped = () => {
+    setIsFlipped(false)
+  }
+
+
   return (
-    <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
+    <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onMouseLeave={notFlipped} onMouseEnter={handleFlip}>
       <div className="flip-card-inner">
         <div className="flip-card-front">
             {frontContent}

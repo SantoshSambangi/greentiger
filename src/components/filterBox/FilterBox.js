@@ -5,7 +5,7 @@ import { CiEraser } from "react-icons/ci";
 
 const FilterBox = (props) => {
 
-    const {title, } = props;
+    const {title} = props;
 
   return (
     
