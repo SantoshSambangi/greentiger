@@ -80,7 +80,7 @@ const Vcu = () => {
     endDate: "",
   })
     console.log(date)
-    
+
   // const getDateRange = (e) => {
   //     setDate({
   //         startDate : e.target.value,
@@ -165,7 +165,7 @@ const Vcu = () => {
           />
           <Card
             frontContent={<h2>Front Content</h2>}
-            // backContent={<BarChart/>}
+            backContent={<BarChart/>}
           />
           <Card
             frontContent={<h2>Front Content</h2>}
