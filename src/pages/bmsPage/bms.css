@@ -60,7 +60,7 @@ p {
 .bmsDateRange {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 .bmsDateRange input {
   background-color: lightgray;
@@ -77,12 +77,11 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 2px;
   padding: 0px 12px;
 }
 
 /* button styles */
-
 .bmsBtnContainer {
   display: flex;
   justify-content: center;

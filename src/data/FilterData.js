@@ -1,29 +1,3 @@
-// export const FilterData = [
-//   {
-//     state: [
-//         "andhra",
-//         "telangana",
-//     ],
-//     locality: [
-//         "vizag",
-//         "tirupati"
-//     ],
-//     deviceId: [1,2,3],
-//     brand: [
-//         "nike",
-//         "adidas"
-//     ],
-//     modal: [
-//         "large",
-//         "small",
-//         "xl",
-//     ],
-//     age:[20,25,30,34,36,37],
-//     gender: ["male","female", "other"],
-//     proffesion:["private", "public", "others"]
-//   },
-// ];
-
 export const FilterData = [
   {
     name: "state",

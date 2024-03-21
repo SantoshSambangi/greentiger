@@ -69,7 +69,7 @@ const Bms = () => {
         {FilterData &&
           FilterData.map((item, index) => {
             return (
-              <FilterBox
+              <FilterBox key={index}
                 title={item.name.charAt(0).toUpperCase() + item.name.slice(1)}
                 label={item.options.map((item) => item.label)}
               />
