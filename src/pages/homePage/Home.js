@@ -3,6 +3,7 @@ import NavBar from "../../components/navBar/NavBar";
 import "../homePage/home.css";
 
 const Home = () => {
+  
   // Initialize the PublicClientApplication
 
   const apiUrl = process.env.REACT_APP_API_URL;

@@ -1,7 +1,8 @@
 .homeContainer {
   height: calc(100vh - 12vh);
   /* background-color: skyblue; */
-  background: linear-gradient(to top, #4facfe, #00f2fe);
+  /* background: linear-gradient(to right, #4facfe, #00f2fe); */
+  background: linear-gradient(to right, #468ecd, #083134);
 }
 .gtTitle {
   display: flex;

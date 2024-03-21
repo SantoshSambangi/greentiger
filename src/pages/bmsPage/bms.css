@@ -1,0 +1,142 @@
+.bmsContainer {
+  height: auto;
+  width: 100%;
+  background-color: #f2f2f2;
+  /* background-color: red; */
+  flex-wrap: wrap;
+}
+
+/* Vcu Header styles */
+.bmsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: aqua; */
+  padding: 0px 10px;
+}
+
+.bmsRightBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.bmsLogo {
+  width: 200px;
+}
+
+.bmsImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bmsTitle h1 {
+  font-family: "Segoe-UI-bold";
+}
+
+.bmsVehicleNumbers {
+  border: none;
+  height: 50px;
+  width: 100px;
+  /* background-color: #00aa13; */
+  background-color: #0e1a77;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.bmsVehicleNumbers h2,
+p {
+  font-family: "Segoe UI";
+  font-weight: 600;
+  color: white;
+}
+.bmsDateRange {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.bmsDateRange input {
+  background-color: lightgray;
+  padding: 4px 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+/* filter styles */
+
+.bmsFilterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  padding: 0px 12px;
+}
+
+/* button styles */
+
+.bmsBtnContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.bmsBtnContainer button {
+  width: 180px;
+  background-color: white;
+  /* color: #40f416; */
+  color: #404fb1;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+  /* font-size: 16px; */
+  padding: 6px 0px;
+  border-radius: 8px;
+  border: 0.1px solid #404fb1;
+}
+
+.bmsBtnContainer button:hover {
+  /* width: 200px; */
+  /* background-color: #40f416; */
+  background-color: #404fb1;
+  /* color: #404fb1 !important; */
+  color: white !important;
+  transition: 1s 0.2s ease-in-out;
+}
+
+/* fliping card Styles */
+
+.bmsCardMainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 2px 0px 4px 0px;
+}
+
+.bmsCardContainer {
+  padding: 2px 0px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  /* flex-wrap: wrap; */
+  gap: 10px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-inline: 30px; */
+}
+
+.bmsFrontContent h1 {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 10px; */
+}

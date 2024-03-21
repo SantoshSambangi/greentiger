@@ -1,5 +1,7 @@
- //ctrl + shift + g
- 
+ //ctrl + shift + g its for git stged for all files
+
+// have to import classNames package className={classNames(btnStyles, styles.btnStyles)} 
+
  {/* <div className="filterBox">
         <div className="filterTitle">
           <span>State</span>
@@ -86,3 +88,55 @@
 };
 
 export default Navbar;
+
+
+// for active button 
+
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
+const ButtonComponent = () => {
+  const history = useHistory();
+  const [activeButton, setActiveButton] = useState('');
+
+  const redirectToVehicle = () => {
+    history.push('/vehicle');
+    setActiveButton('vehicle');
+  };
+
+  const redirectToBms = () => {
+    history.push('/bms');
+    setActiveButton('bms');
+  };
+
+  const redirectToVcu = () => {
+    history.push('/vcu');
+    setActiveButton('vcu');
+  };
+
+  return (
+    <div className="btnContainer">
+      <button
+        className={activeButton === 'vehicle' ? 'activeButton' : ''}
+        onClick={redirectToVehicle}
+      >
+        Vehicle Details
+      </button>
+      <button
+        className={activeButton === 'bms' ? 'activeButton' : ''}
+        onClick={redirectToBms}
+      >
+        BMS Details
+      </button>
+      <button
+        className={activeButton === 'vcu' ? 'activeButton' : ''}
+        onClick={redirectToVcu}
+      >
+        VCU Details
+      </button>
+    </div>
+  );
+};
+
+export default ButtonComponent;
+

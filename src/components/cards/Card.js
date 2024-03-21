@@ -3,7 +3,7 @@ import "../cards/card.css";
 
 const Card = (props) => {
 
-  const {frontContent, backContent} = props;
+  const {frontContent, backContent, color} = props;
     
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -15,9 +15,11 @@ const Card = (props) => {
     setIsFlipped(false)
   }
 
+  // className={classNames(btnStyles, styles.btnStyles)}
 
   return (
-    <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onMouseLeave={notFlipped} onMouseEnter={handleFlip}>
+    <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onMouseLeave={notFlipped} onMouseEnter={handleFlip} 
+    style={{ backgroundColor: color }}>
       <div className="flip-card-inner">
         <div className="flip-card-front">
             {frontContent}
@@ -31,3 +33,4 @@ const Card = (props) => {
 };
 
 export default Card;
+

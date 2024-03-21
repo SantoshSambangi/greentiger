@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { auth } from "../../config/firebase";
 const UserDisplayName = () => {
 
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const UserDisplayName = () => {
   return (
     <>
       <div>
-        <p>Welcome,{userEmail ? userEmail : "User"} </p>
+        <p style={{color:"red"}}>Welcome,{userEmail ? userEmail : "User"} </p>
       </div>
     </>
   );
