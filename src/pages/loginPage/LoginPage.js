@@ -139,6 +139,7 @@ const LoginPage = () => {
           const user = userCredential.user;
           navigate("/home");
           localStorage.setItem("user_id", user.uid);
+          console.log(formData)
         })
         .catch((error) => {
           const errorCode = error.code;

@@ -1,6 +1,8 @@
 .flip-card {
-  width: 380px;
-  height: 140px;
+  /* width: 380px;
+  height: 140px; */
+  width: 28%;
+  height: 20%;
   perspective: 1000px;
   cursor: pointer;
 }

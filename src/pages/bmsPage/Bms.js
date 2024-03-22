@@ -3,7 +3,7 @@ import "../bmsPage/bms.css";
 import { useNavigate } from "react-router-dom";
 import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
-import { FilterData } from "../../data/FilterData";
+import { FilterData, bmsCardData } from "../../data/FilterData";
 const Bms = () => {
   const navigate = useNavigate();
 
@@ -22,6 +22,21 @@ const Bms = () => {
     startDate: "",
     endDate: "",
   });
+
+  console.log("dateRange",date);
+
+  const [filterBmsData, setFilterBmsData] = useState({
+    state: "",
+    locality: "",
+    deviceId: "",
+    brand: "",
+    modal: "",
+    age: "",
+    gender: "",
+    profession: "",
+  });
+
+  console.log("filterdata", filterBmsData);
 
   // console.log(date);
 
@@ -66,63 +81,31 @@ const Bms = () => {
       {/* vehicle filter */}
 
       <div className="bmsFilterContainer">
-        {FilterData &&
-          FilterData.map((item, index) => {
-            return (
-              <FilterBox key={index}
-                title={item.name.charAt(0).toUpperCase() + item.name.slice(1)}
-                label={item.options.map((item) => item.label)}
-              />
-            );
-          })}
-        {/* <FilterBox title={<h4>Locality</h4>} />
-        <FilterBox title={<h4>Device Id</h4>} />
-        <FilterBox title={<h4>Brand</h4>} />
-        <FilterBox title={<h4>Modal</h4>} />
-        <FilterBox title={<h4>Age</h4>} />
-        <FilterBox title={<h4>Gender</h4>} />
-        <FilterBox title={<h4>Profession</h4>} /> */}
+        {FilterData.map((item, index) => (
+          <FilterBox
+            key={index}
+            title={item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+            options={item.options}
+            filterBmsData={filterBmsData}
+            setFilterBmsData={setFilterBmsData}
+          />
+        ))}
       </div>
 
       {/* Cards Container */}
 
       <div className="bmsCardMainContainer">
         <div className="bmsCardContainer">
-          <Card
-            color="#0e1a77"
-            frontContent={
-              <div className="bmsFrontContent">
-                <h1>0</h1>
-                <p>Total Distance (KM)</p>
-              </div>
-            }
-            backContent={<p>Back Content</p>}
-          />
-          <Card
-            color="#0e1a77"
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <Card
-            color="#0e1a77"
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <Card
-            color="#0e1a77"
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <Card
-            color="#0e1a77"
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <Card
-            color="#0e1a77"
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
+          {bmsCardData?.map((item, index) => {
+            return (
+              <Card
+                key={index}
+                frontContent={item.title}
+                backContent={item?.description}
+                color="#0e1a77"
+              />
+            );
+          })}
         </div>
 
         {/* Button container */}

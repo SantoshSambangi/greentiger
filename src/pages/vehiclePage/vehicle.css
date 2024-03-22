@@ -1,5 +1,6 @@
 .vcuContainer {
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: 100vh;
   width: 100%;
   background-color: #f2f2f2;
   flex-wrap: wrap;
