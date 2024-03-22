@@ -1,67 +1,17 @@
 import React, { useState } from "react";
-// import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
 import "../vehiclePage/vehicle.css";
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import FlipCard from "../../components/flipCard/FlipCard";
-import CustomModal from "../../components/modal/Modal";
-import DateSelectionPicker from "../../components/dateRangePicker/DateSelectionPicker";
-// import BarChart from "../../components/chartGraphs/BarChart";
+// import FlipCard from "../../components/flipCard/FlipCard";
 import { VscSearch } from "react-icons/vsc";
 import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
-// import BarChart from "../../components/chartGraphs/BarChart";
 import ExpChart from "../../components/chartGraphs/ExpChart";
 import BarChart from "../../components/chartGraphs/BarChart";
 import PieChart from "../../components/chartGraphs/PieChart";
 import LineChart from "../../components/chartGraphs/LineChart";
-// import Card from "../../components/cards/Card";
 
 const VehicleDetails = () => {
-  // const [modalOpen, setModalOpen] = useState(false);
-  // const [activeTab, setActiveTab] = useState(null);
-
-  // const [modalData, setModalData] = useState(null);
-
-  // const [chartData, setChartData] = useState({
-  //   labels: [],
-
-  //   datasets: [
-  //     {
-  //       label: "Users Gained ",
-  //       data: [],
-  //       backgroundColor: [
-  //         "rgba(75,192,192,1)",
-  //         "&quot;#ecf0f1",
-  //         "#50AF95",
-  //         "#f3ba2f",
-  //         "#2a71d0",
-  //       ],
-  //       borderColor: "black",
-  //       borderWidth: 2,
-  //     },
-  //   ],
-  // });
-
-  // const filterData = {
-  //   State: ["Banglore", "Chennai", "Pune", "Mumbai", "Jaipur", "Bhubaneshwar"],
-  //   City: ["Vehicle 1", "Vehicle 2", "Vehicle 3"],
-  //   DeviceId: ["Customer 1", "Customer 2", "Customer 3"],
-  // };
-
-  // const handleOpenModal = (tab) => {
-  //   setActiveTab(tab);
-  //   setModalOpen(true);
-  // };
-
-  // const handleCloseModal = () => {
-  //   setModalOpen(false);
-  // };
-
-  // const handleModalSubmit = (data) => {
-  //   console.log(data, "on handel modal submit");
-  //   setModalData(data);
-  // };
+  
 
   const navigate = useNavigate();
 
@@ -84,16 +34,7 @@ const VehicleDetails = () => {
 
   return (
     <div className="vcuContainer">
-      {/* modal */}
-      {/* <CustomModal
-        isOpen={modalOpen}
-        handleClose={handleCloseModal}
-        title={activeTab}
-        data={filterData[activeTab]}
-        onSubmit={handleModalSubmit}
-        filterData={filterData} // Pass the filterData prop here
-      /> */}
-
+      
       {/* vehicle header */}
 
       <div className="vcuHeader">
@@ -109,10 +50,6 @@ const VehicleDetails = () => {
           <div className="title">
             <h1>Vehicle Details</h1>
           </div>
-
-          {/* <div>
-          <DateSelectionPicker />
-        </div> */}
 
           <div className="vehicleNumbers">
             <h2>2</h2>

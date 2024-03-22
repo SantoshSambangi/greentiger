@@ -1,3 +1,5 @@
+import PieChart from "../components/chartGraphs/PieChart";
+
 export const FilterData = [
   {
       name: "state",
@@ -68,7 +70,7 @@ export const FilterData = [
 export const bmsCardData = [
   {
       title: "front content1",
-      description: "back content1",
+      description: <PieChart/>,
   },
   {
       title: "front content2",

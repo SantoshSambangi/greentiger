@@ -1,10 +1,12 @@
 .flip-card {
-  /* width: 380px;
-  height: 140px; */
-  width: 28%;
-  height: 20%;
+  width: 380px;
+  height: 180px;
+  /* width: 28%;
+  height: 20%; */
   perspective: 1000px;
   cursor: pointer;
+  background-color: #00aa13;
+  border-radius: 10px;
 }
 .flip-card-inner {
   position: relative;
@@ -12,6 +14,9 @@
   height: 100%;
   transition: transform 1s 0.1s ease-in-out;
   transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flip-card.flipped .flip-card-inner {

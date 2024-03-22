@@ -439,3 +439,70 @@ const Bms = () => {
   );
 };
 export default Bms;
+
+// vehicle Details model mui
+
+
+import dayjs from "dayjs";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import CustomModal from "../../components/modal/Modal";
+import DateSelectionPicker from "../../components/dateRangePicker/DateSelectionPicker";
+import Card from "../../components/cards/Card";
+import BarChart from "../../components/chartGraphs/BarChart";
+import BarChart from "../../components/chartGraphs/BarChart";
+
+{/* modal */}
+      {/* <CustomModal
+        isOpen={modalOpen}
+        handleClose={handleCloseModal}
+        title={activeTab}
+        data={filterData[activeTab]}
+        onSubmit={handleModalSubmit}
+        filterData={filterData} // Pass the filterData prop here
+      /> */}
+
+
+const [modalOpen, setModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState(null);
+
+  const [modalData, setModalData] = useState(null);
+
+  const [chartData, setChartData] = useState({
+    labels: [],
+
+    datasets: [
+      {
+        label: "Users Gained ",
+        data: [],
+        backgroundColor: [
+          "rgba(75,192,192,1)",
+          "&quot;#ecf0f1",
+          "#50AF95",
+          "#f3ba2f",
+          "#2a71d0",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ],
+  });
+
+  const filterData = {
+    State: ["Banglore", "Chennai", "Pune", "Mumbai", "Jaipur", "Bhubaneshwar"],
+    City: ["Vehicle 1", "Vehicle 2", "Vehicle 3"],
+    DeviceId: ["Customer 1", "Customer 2", "Customer 3"],
+  };
+
+  const handleOpenModal = (tab) => {
+    setActiveTab(tab);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleModalSubmit = (data) => {
+    console.log(data, "on handel modal submit");
+    setModalData(data);
+  };

@@ -1,9 +1,10 @@
 .vcuContainer {
-  /* height: 100vh; */
+  height: 100vh;
   min-height: 100vh;
   width: 100%;
   background-color: #f2f2f2;
   flex-wrap: wrap;
+  /* background-color: black; */
 }
 
 /* Vcu Header styles */
@@ -73,7 +74,7 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 8px;
   padding: 0px 12px;
 }
 
@@ -86,14 +87,14 @@ p {
 }
 
 .btnContainer button {
-  width: 200px;
+  width: 180px;
   background-color: white;
   color: #40f416;
-  /* font-weight: bold; */
+  font-weight: bold;
   font-family: "Segoe UI";
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  border: none;
-  /* font-size: 16px; */
+  border: 1px solid #40f416;
+  font-size: 16px;
   padding: 8px 0px;
   border-radius: 8px;
 }
@@ -107,12 +108,12 @@ p {
 
 /* fliping card Styles */
 
-/* .cardMainContainer {
+.cardMainContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   padding: 4px 0px;
-} */
+}
 
 .cardContainer {
   padding: 8px 0px;

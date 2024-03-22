@@ -1,6 +1,7 @@
 .bmsContainer {
   /* height: auto; */
   min-height: 100vh;
+  height: 100vh;
   width: 100%;
   background-color: #f2f2f2;
   /* background-color: red; */
@@ -78,7 +79,7 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2px;
+  margin-top: 8px;
   padding: 0px 12px;
 }
 
@@ -97,7 +98,7 @@ p {
   font-weight: bold;
   font-family: "Segoe UI";
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
-  /* font-size: 16px; */
+  font-size: 16px;
   padding: 6px 0px;
   border-radius: 8px;
   border: 0.1px solid #404fb1;
@@ -108,7 +109,7 @@ p {
   /* background-color: #40f416; */
   background-color: #404fb1;
   /* color: #404fb1 !important; */
-  color: white !important;
+  color: white;
   transition: 1s 0.2s ease-in-out;
 }
 
@@ -117,12 +118,12 @@ p {
 .bmsCardMainContainer {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 2px 0px 4px 0px;
+  gap: 10px;
+  padding: 4px 0px;
 }
 
 .bmsCardContainer {
-  padding: 2px 0px;
+  padding: 8px 0px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   /* flex-wrap: wrap; */
@@ -130,7 +131,7 @@ p {
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  /* margin-inline: 30px; */
+  margin-inline: 30px;
 }
 
 .bmsFrontContent h1 {
