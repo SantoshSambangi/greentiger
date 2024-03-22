@@ -1,6 +1,6 @@
-import { createContext, useMemo, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 
-const AppDataContext = createContext();
+const AppDataContext = createContext(null);
 
 const DataProvider = (props) => {
     
@@ -19,4 +19,8 @@ const DataProvider = (props) => {
     )
 }
 
-export {AppDataContext, DataProvider};
+const useContextCustomHook = () => {
+        return useContext(AppDataContext)
+}
+
+export {AppDataContext, DataProvider, useContextCustomHook};

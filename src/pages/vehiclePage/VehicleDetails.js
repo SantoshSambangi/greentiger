@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../vehiclePage/vehicle.css";
-// import FlipCard from "../../components/flipCard/FlipCard";
-import { VscSearch } from "react-icons/vsc";
+// import { VscSearch } from "react-icons/vsc";
 import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
 import ExpChart from "../../components/chartGraphs/ExpChart";
