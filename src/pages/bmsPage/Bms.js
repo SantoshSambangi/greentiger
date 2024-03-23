@@ -23,7 +23,7 @@ const Bms = () => {
     endDate: "",
   });
 
-  console.log("dateRange",date);
+  console.log("dateRange", date);
 
   const [filterBmsData, setFilterBmsData] = useState({
     state: "",
@@ -39,6 +39,29 @@ const Bms = () => {
   console.log("filterdata", filterBmsData);
 
   // console.log(date);
+
+  const colors = [
+    "#ff0000",
+    "#ffff00",
+    "#00ff00",
+    "#800080",
+    "#ffa500",
+    "#f5f5dc",
+  ];
+
+  const handleCheckBoxClear = (item) => {
+    // console.log(item)
+    if(item){
+      if (item.name === "state") {
+        setFilterBmsData((prevData) => ({ ...prevData, state: "" }));
+      }
+      else if(item.name === "locality");{
+        setFilterBmsData((prevData) => ({ ...prevData, locality: "" }));
+      }}
+    else{
+      return null
+    }
+  };
 
   return (
     <div className="bmsContainer">
@@ -88,6 +111,7 @@ const Bms = () => {
             options={item.options}
             filterBmsData={filterBmsData}
             setFilterBmsData={setFilterBmsData}
+            eraseAll={() => handleCheckBoxClear(item)}
           />
         ))}
       </div>
@@ -97,12 +121,14 @@ const Bms = () => {
       <div className="bmsCardMainContainer">
         <div className="bmsCardContainer">
           {bmsCardData?.map((item, index) => {
+            // const colorIndex = index % colors.length;
             return (
               <Card
                 key={index}
                 frontContent={item.title}
                 backContent={item?.description}
                 color="#0e1a77"
+                // color={colors[colorIndex]}
               />
             );
           })}

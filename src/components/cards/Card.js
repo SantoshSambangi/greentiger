@@ -18,8 +18,7 @@ const Card = (props) => {
   // className={classNames(btnStyles, styles.btnStyles)}
 
   return (
-    <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onMouseLeave={notFlipped} onMouseEnter={handleFlip} 
-    style={{ backgroundColor: color }}>
+    <div style={{ backgroundColor: color }} className={`flip-card ${isFlipped ? 'flipped' : ''}`} onMouseLeave={notFlipped} onMouseEnter={handleFlip} >
       <div className="flip-card-inner">
         <div className="flip-card-front">
             {frontContent}
@@ -33,4 +32,3 @@ const Card = (props) => {
 };
 
 export default Card;
-
