@@ -1,61 +1,27 @@
-// import React from "react";
-// import "../filterBox/filterBox.css";
-// import { VscSearch } from "react-icons/vsc";
-// import { CiEraser } from "react-icons/ci";
-// import { FilterData } from "../../data/FilterData";
-// const FilterBox = (props) => {
-//   const { title, label } = props;
-
-//   return (
-//     <div className="filterBox">
-//       <div className="filterTitle">
-//         <span className="">{title}</span>
-//         <span>
-//           <CiEraser />
-//         </span>
-//       </div>
-
-//       <div className="filterSearch">
-//         <VscSearch size={20} />
-//         <input type="text" size="10" placeholder="Search.." />
-//       </div>
-
-//       <div className="filterCheck">
-//         {FilterData && FilterData.map((item, index) => (
-//           <div key={index}>
-//             {item.options.map((option, idx) => (
-//               <div key={idx}>
-//                 <input type="checkbox" />
-//                 <label>{option.label}</label>
-//               </div>
-//             ))}
-//           </div>
-//         ))}
-//         {/* <input type="checkbox" />
-//         <label>{label}</label> */}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default FilterBox;
-
-
 import React, { useState } from "react";
 import "../filterBox/filterBox.css";
 import { VscSearch } from "react-icons/vsc";
 import { CiEraser } from "react-icons/ci";
 
 const FilterBox = (props) => {
-
     const { title, options, filterBmsData, setFilterBmsData } = props;
+    const [searchQuery, setSearchQuery] = useState("");
 
     const handleCheckboxChange = (optionValue, name) => {
-        setFilterBmsData((prevData) => ({
-            ...prevData,
-            [name]: optionValue,
-        }));
+        setFilterBmsData((prevData) => {
+            const updatedData = { ...prevData };
+            if (prevData[name] === optionValue) {
+                updatedData[name] = "";
+            } else {
+                updatedData[name] = optionValue;
+            }
+            return updatedData;
+        });
     };
+
+    const filteredOptions = options?.filter((option) =>
+        option.label.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (
         <div className="filterBox">
@@ -68,10 +34,16 @@ const FilterBox = (props) => {
 
             <div className="filterSearch">
                 <VscSearch size={20} />
-                <input type="text" size="10" placeholder="Search.." />
+                <input
+                    type="text"
+                    size="10"
+                    placeholder="Search.."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
             </div>
 
-            {options?.map((option) => (
+            {filteredOptions?.map((option) => (
                 <div key={option.value} className="filterCheck">
                     <input
                         type="checkbox"
