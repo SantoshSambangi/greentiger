@@ -4,8 +4,11 @@ import { VscSearch } from "react-icons/vsc";
 import { CiEraser } from "react-icons/ci";
 
 const FilterBox = (props) => {
+
     const { title, options, filterBmsData, setFilterBmsData, eraseAll } = props;
+    
     const [searchQuery, setSearchQuery] = useState("");
+
 
     const handleCheckboxChange = (optionValue, name) => {
         
@@ -19,6 +22,7 @@ const FilterBox = (props) => {
             return updatedData;
         });
     };
+
 
     const filteredOptions = options?.filter((option) =>
         option.label.toLowerCase().includes(searchQuery.toLowerCase())
@@ -50,9 +54,7 @@ const FilterBox = (props) => {
                     <input
                         type="checkbox"
                         value={option.value}
-                        checked={
-                            filterBmsData[title.toLowerCase()] === option.value
-                        }
+                        checked={filterBmsData[title.toLowerCase()] === option.value}
                         onChange={() =>
                             handleCheckboxChange(
                                 option.value,

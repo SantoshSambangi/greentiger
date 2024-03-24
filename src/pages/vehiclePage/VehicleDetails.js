@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../vehiclePage/vehicle.css";
-// import { VscSearch } from "react-icons/vsc";
 import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
-import ExpChart from "../../components/chartGraphs/ExpChart";
-import BarChart from "../../components/chartGraphs/BarChart";
-import PieChart from "../../components/chartGraphs/PieChart";
-import LineChart from "../../components/chartGraphs/LineChart";
+import { FilterData, vehicleCardData } from "../../data/FilterData";
 
 const VehicleDetails = () => {
   const navigate = useNavigate();
@@ -31,6 +27,31 @@ const VehicleDetails = () => {
       navigate("/bms");
     } else if (item === "Vcu Details") {
       navigate("/vcu");
+    }
+  };
+
+  const [filterBmsData, setFilterBmsData] = useState({
+    state: "",
+    locality: "",
+    deviceId: "",
+    brand: "",
+    modal: "",
+    age: "",
+    gender: "",
+    profession: "",
+  });
+
+  const handleCheckBoxClear = (item) => {
+    // console.log(item)
+    if (item) {
+      if (item.name === "state") {
+        setFilterBmsData((prevData) => ({ ...prevData, state: "" }));
+      } else if (item.name === "locality");
+      {
+        setFilterBmsData((prevData) => ({ ...prevData, locality: "" }));
+      }
+    } else {
+      return null;
     }
   };
 
@@ -76,58 +97,38 @@ const VehicleDetails = () => {
       {/* vehicle filter */}
 
       <div className="filterContainer">
-        <FilterBox title={<h4>State</h4>} />
-        <FilterBox title={<h4>Locality</h4>} />
-        <FilterBox title={<h4>Device Id</h4>} />
-        <FilterBox title={<h4>Brand</h4>} />
-        <FilterBox title={<h4>Modal</h4>} />
-        <FilterBox title={<h4>Age</h4>} />
-        <FilterBox title={<h4>Gender</h4>} />
-        <FilterBox title={<h4>Profession</h4>} />
+        {FilterData.map((item, index) => (
+          <FilterBox
+            key={index}
+            title={item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+            options={item.options}
+            filterBmsData={filterBmsData}
+            setFilterBmsData={setFilterBmsData}
+            eraseAll={() => handleCheckBoxClear(item)}
+          />
+        ))}
+
       </div>
 
       {/* Cards Container */}
 
       <div className="cardMainContainer">
         <div className="cardContainer">
-          <Card
-            frontContent={
-              <div className="frontContent">
-                <h1>0</h1>
-                <p>Total Distance (KM)</p>
-              </div>
-            }
-            backContent={<ExpChart />}
-          />
-          <Card
-            frontContent={<h2>Front Content</h2>}
-            backContent={<BarChart />}
-          />
-          <Card
-            frontContent={<h2>Front Content</h2>}
-            backContent={<PieChart />}
-          />
-          <Card
-            frontContent={<h2>Front Content</h2>}
-            backContent={<LineChart />}
-          />
-          <Card
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <Card
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
+          {vehicleCardData?.map((item, index) => {
+            return (
+              <Card
+                key={index}
+                frontContent={item.title}
+                backContent={item?.description}
+                color="00aa13"
+              />
+            );
+          })}
         </div>
 
         {/* Button container */}
 
         <div className="btnContainer">
-          {/* <button onClick={redirectToVehicle}>Vehicle Details</button>
-          <button onClick={redirectToBms}>BMS Details</button>
-          <button onClick={redirectToVcu}>VCU Details</button> */}
-
           {btnData.map((item, index) => {
             return <button key={index}  className={location.pathname === "/vehicledetails" && item  === "Vehicle Details" ? "vehicleBtn" : "inActiveBtn"}
             onClick={() => handleBtn(item)}>{item}</button>;

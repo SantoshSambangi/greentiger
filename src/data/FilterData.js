@@ -1,3 +1,5 @@
+import ExpChart from "../components/chartGraphs/ExpChart";
+import LineChart from "../components/chartGraphs/LineChart";
 import PieChart from "../components/chartGraphs/PieChart";
 
 export const FilterData = [
@@ -67,10 +69,66 @@ export const FilterData = [
   },
 ];
 
+//Cards Data for Three pages
+
+export const vehicleCardData = [
+    {
+        title: " vcu front content1",
+        description: <ExpChart/>,
+    },
+    {
+        title: "front content2",
+        description: <LineChart/>,
+    },
+    {
+        title: "front content3",
+        description: <PieChart/>,
+    },
+    {
+        title: "front content4",
+        description: "back content4",
+    },
+    {
+        title: "front content5",
+        description: "back content5",
+    },
+    {
+        title: "front content6",
+        description: "back content6",
+    },
+  ];
+
 export const bmsCardData = [
   {
       title: "front content1",
       description: <PieChart/>,
+  },
+  {
+      title: "front content2",
+      description: "back content2",
+  },
+  {
+      title: "front content3",
+      description: "back content3",
+  },
+  {
+      title: "front content4",
+      description: "back content4",
+  },
+  {
+      title: "front content5",
+      description: "back content5",
+  },
+  {
+      title: "front content6",
+      description: "back content6",
+  },
+];
+
+export const vcuCardData = [
+  {
+      title: " vcu front content1",
+      description: "vcu backcontent2",
   },
   {
       title: "front content2",

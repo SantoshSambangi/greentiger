@@ -602,3 +602,39 @@ const FilterBox = (props) => {
 };
 
 export default FilterBox;
+
+// Card container
+{/* <Card
+            frontContent={
+              <div className="frontContent">
+                <h1>0</h1>
+                <p>Total Distance (KM)</p>
+              </div>
+            }
+            backContent={<ExpChart />}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<BarChart />}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<PieChart />}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<LineChart />}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          /> */}
+
+          // Btn container
+          {/* <button onClick={redirectToVehicle}>Vehicle Details</button>
+          <button onClick={redirectToBms}>BMS Details</button>
+          <button onClick={redirectToVcu}>VCU Details</button> */}

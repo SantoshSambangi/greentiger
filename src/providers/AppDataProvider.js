@@ -20,7 +20,7 @@ const DataProvider = (props) => {
 }
 
 const useContextCustomHook = () => {
-        return useContext(AppDataContext)
+    return useContext(AppDataContext)
 }
 
 export {AppDataContext, DataProvider, useContextCustomHook};

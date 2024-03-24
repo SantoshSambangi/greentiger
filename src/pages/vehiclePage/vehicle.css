@@ -89,13 +89,15 @@ p {
 .vehicleBtn {
   width: 200px;
   /* background-color: white; */
-  background-color: #40f416;
+  /* background-color: #40f416; */
+  background-color: #00aa13;
   /* color: #40f416; */
   color: white;
   font-weight: bold;
   font-family: "Segoe UI";
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  border: 1px solid #40f416;
+  /* border: 1px solid #40f416; */
+  border: 1px solid #00aa13;
   font-size: 16px;
   padding: 8px 0px;
   border-radius: 8px;
@@ -108,7 +110,8 @@ p {
   font-weight: bold;
   font-family: "Segoe UI";
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  border: 1px solid #40f416;
+  /* border: 1px solid #40f416; */
+  border: 1px solid #00aa13;
   font-size: 16px;
   padding: 8px 0px;
   border-radius: 8px;

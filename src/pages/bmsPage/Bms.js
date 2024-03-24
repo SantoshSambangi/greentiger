@@ -4,7 +4,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
 import { FilterData, bmsCardData } from "../../data/FilterData";
+
+
 const Bms = () => {
+
   const navigate = useNavigate();
 
   const location = useLocation()
@@ -40,6 +43,7 @@ const Bms = () => {
     "#ffa500",
     "#f5f5dc",
   ];
+
 
   const handleCheckBoxClear = (item) => {
     // console.log(item)
@@ -146,9 +150,6 @@ const Bms = () => {
         {/* Button container */}
 
         <div className="bmsBtnContainer">
-          {/* <button onClick={redirectToVehicle}>Vehicle Details</button>
-          <button onClick={redirectToBms}>BMS Details</button>
-          <button onClick={redirectToVcu}>VCU Details</button> */}
             {
               btnData.map((item, index) =>{
                 return <button key={index} className={location.pathname === "/bms" && item  === "Bms Details" ? "bmsBtn" : "inActiveBtn"}
