@@ -90,11 +90,12 @@ p {
   gap: 30px;
 }
 
-.bmsBtnContainer button {
+.bmsBtn{
   width: 180px;
-  background-color: white;
-  /* color: #40f416; */
-  color: #404fb1;
+  /* background-color: white; */
+  background-color: #404fb1;
+  /* color: #404fb1; */
+  color: white;
   font-weight: bold;
   font-family: "Segoe UI";
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
@@ -104,14 +105,26 @@ p {
   border: 0.1px solid #404fb1;
 }
 
-.bmsBtnContainer button:hover {
-  /* width: 200px; */
-  /* background-color: #40f416; */
+.inActiveBtn {
+  width: 200px;
+  background-color: white;
+  /* color: #40f416; */
+  color: black;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #40f416;
+  font-size: 16px;
+  padding: 8px 0px;
+  border-radius: 8px;
+}
+
+/* .bmsBtnContainer button:hover {
+  width: 200px;
   background-color: #404fb1;
-  /* color: #404fb1 !important; */
   color: white;
   transition: 1s 0.2s ease-in-out;
-}
+} */
 
 /* fliping card Styles */
 

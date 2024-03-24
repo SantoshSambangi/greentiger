@@ -8,6 +8,7 @@ const FilterBox = (props) => {
     const [searchQuery, setSearchQuery] = useState("");
 
     const handleCheckboxChange = (optionValue, name) => {
+        
         setFilterBmsData((prevData) => {
             const updatedData = { ...prevData };
             if (prevData[name] === optionValue) {

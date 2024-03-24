@@ -1,22 +1,14 @@
 import React, { useState } from "react";
 import "../bmsPage/bms.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
 import { FilterData, bmsCardData } from "../../data/FilterData";
 const Bms = () => {
   const navigate = useNavigate();
 
-  const redirectToVcu = () => {
-    navigate("/vcu");
-  };
-  const redirectToBms = () => {
-    navigate("/bms");
-  };
-
-  const redirectToVehicle = () => {
-    navigate("/vehicledetails");
-  };
+  const location = useLocation()
+  console.log(location)
 
   const [date, setDate] = useState({
     startDate: "",
@@ -62,6 +54,23 @@ const Bms = () => {
       return null
     }
   };
+
+  const btnData = [
+    "Vehicle Details", "Bms Details", "Vcu Details"
+  ]
+
+  const handleBtn = (item) => {
+    // console.log(item)
+    if(item === "Vehicle Details"){
+      navigate("/vehicledetails")
+    }
+    else if(item === "Bms Details"){
+      navigate("/bms")
+    }
+    else if (item === "Vcu Details"){
+      navigate("/vcu")
+    }
+  }
 
   return (
     <div className="bmsContainer">
@@ -137,9 +146,16 @@ const Bms = () => {
         {/* Button container */}
 
         <div className="bmsBtnContainer">
-          <button onClick={redirectToVehicle}>Vehicle Details</button>
+          {/* <button onClick={redirectToVehicle}>Vehicle Details</button>
           <button onClick={redirectToBms}>BMS Details</button>
-          <button onClick={redirectToVcu}>VCU Details</button>
+          <button onClick={redirectToVcu}>VCU Details</button> */}
+            {
+              btnData.map((item, index) =>{
+                return <button key={index} className={location.pathname === "/bms" && item  === "Bms Details" ? "bmsBtn" : "inActiveBtn"}
+                onClick={()=> handleBtn(item)}
+                >{item}</button>
+              })
+            }
         </div>
       </div>
     </div>

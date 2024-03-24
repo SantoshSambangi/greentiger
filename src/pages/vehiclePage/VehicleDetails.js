@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../vehiclePage/vehicle.css";
 // import { VscSearch } from "react-icons/vsc";
 import FilterBox from "../../components/filterBox/FilterBox";
@@ -10,19 +10,9 @@ import PieChart from "../../components/chartGraphs/PieChart";
 import LineChart from "../../components/chartGraphs/LineChart";
 
 const VehicleDetails = () => {
-  
-
   const navigate = useNavigate();
 
-  const redirectToVcu = () => {
-    navigate("/vcu");
-  };
-  const redirectToBms = () => {
-    navigate("/bms");
-  };
-  const redirectToVehicle = () => {
-    navigate("/vehicledetails");
-  };
+  const location = useLocation();
 
   const [date, setDate] = useState({
     startDate: "",
@@ -31,9 +21,21 @@ const VehicleDetails = () => {
 
   console.log(date);
 
+  const btnData = ["Vehicle Details", "Bms Details", "Vcu Details"];
+
+  const handleBtn = (item) => {
+    // console.log(item)
+    if (item === "Vehicle Details") {
+      navigate("/vehicledetails");
+    } else if (item === "Bms Details") {
+      navigate("/bms");
+    } else if (item === "Vcu Details") {
+      navigate("/vcu");
+    }
+  };
+
   return (
     <div className="vcuContainer">
-      
       {/* vehicle header */}
 
       <div className="vcuHeader">
@@ -122,11 +124,15 @@ const VehicleDetails = () => {
         {/* Button container */}
 
         <div className="btnContainer">
-          <button onClick={redirectToVehicle}>Vehicle Details</button>
+          {/* <button onClick={redirectToVehicle}>Vehicle Details</button>
           <button onClick={redirectToBms}>BMS Details</button>
-          <button onClick={redirectToVcu}>VCU Details</button>
+          <button onClick={redirectToVcu}>VCU Details</button> */}
+
+          {btnData.map((item, index) => {
+            return <button key={index}  className={location.pathname === "/vehicledetails" && item  === "Vehicle Details" ? "vehicleBtn" : "inActiveBtn"}
+            onClick={() => handleBtn(item)}>{item}</button>;
+          })}
         </div>
-        
       </div>
     </div>
   );
