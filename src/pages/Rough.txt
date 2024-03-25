@@ -638,3 +638,28 @@ export default FilterBox;
           {/* <button onClick={redirectToVehicle}>Vehicle Details</button>
           <button onClick={redirectToBms}>BMS Details</button>
           <button onClick={redirectToVcu}>VCU Details</button> */}
+
+
+          // different Colors for different Cards
+
+          const colors = [
+              "#ff0000",
+              "#ffff00",
+              "#00ff00",
+              "#800080",
+              "#ffa500",
+              "#f5f5dc",
+            ];
+
+          {bmsCardData?.map((item, index) => {
+            const colorIndex = index % colors.length;
+            return (
+              <Card
+                key={index}
+                frontContent={item.title}
+                backContent={item?.description}
+                //color="#0e1a77"
+                color={colors[colorIndex]}
+              />
+            );
+          })}

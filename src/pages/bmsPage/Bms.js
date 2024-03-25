@@ -5,20 +5,19 @@ import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
 import { FilterData, bmsCardData } from "../../data/FilterData";
 
-
 const Bms = () => {
 
   const navigate = useNavigate();
 
   const location = useLocation()
-  console.log(location)
+  // console.log(location)
 
   const [date, setDate] = useState({
     startDate: "",
     endDate: "",
   });
 
-  console.log("dateRange", date);
+  // console.log("dateRange", date);
 
   const [filterBmsData, setFilterBmsData] = useState({
     state: "",
@@ -31,18 +30,18 @@ const Bms = () => {
     profession: "",
   });
 
-  console.log("filterdata", filterBmsData);
+  // console.log("filterdata", filterBmsData);
 
   // console.log(date);
 
-  const colors = [
-    "#ff0000",
-    "#ffff00",
-    "#00ff00",
-    "#800080",
-    "#ffa500",
-    "#f5f5dc",
-  ];
+  // const colors = [
+  //   "#ff0000",
+  //   "#ffff00",
+  //   "#00ff00",
+  //   "#800080",
+  //   "#ffa500",
+  //   "#f5f5dc",
+  // ];
 
 
   const handleCheckBoxClear = (item) => {

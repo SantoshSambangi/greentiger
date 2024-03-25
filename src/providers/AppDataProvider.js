@@ -3,14 +3,11 @@ import { createContext, useContext, useMemo, useState } from "react";
 const AppDataContext = createContext(null);
 
 const DataProvider = (props) => {
-    
-    const [sample, setSample] = useState(false);
 
+    const [sample, setSample] = useState(2);
     const memoizedvalue = useMemo(() => {
             return { sample, setSample };
         }, [sample, setSample])
-
-        console.log(sample)
 
     return (
         <AppDataContext.Provider value={memoizedvalue}>

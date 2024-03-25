@@ -4,18 +4,22 @@ import "../vehiclePage/vehicle.css";
 import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
 import { FilterData, vehicleCardData } from "../../data/FilterData";
+import { useContextCustomHook } from "../../providers/AppDataProvider";
 
 const VehicleDetails = () => {
   const navigate = useNavigate();
 
   const location = useLocation();
 
+  const data = useContextCustomHook();
+  console.log("Data", data);
+
   const [date, setDate] = useState({
     startDate: "",
     endDate: "",
   });
 
-  console.log(date);
+  // console.log(date);
 
   const btnData = ["Vehicle Details", "Bms Details", "Vcu Details"];
 
@@ -107,7 +111,6 @@ const VehicleDetails = () => {
             eraseAll={() => handleCheckBoxClear(item)}
           />
         ))}
-
       </div>
 
       {/* Cards Container */}
@@ -130,8 +133,19 @@ const VehicleDetails = () => {
 
         <div className="btnContainer">
           {btnData.map((item, index) => {
-            return <button key={index}  className={location.pathname === "/vehicledetails" && item  === "Vehicle Details" ? "vehicleBtn" : "inActiveBtn"}
-            onClick={() => handleBtn(item)}>{item}</button>;
+            return (
+              <button
+                key={index}
+                className={
+                  location.pathname === "/vehicledetails" &&
+                  item === "Vehicle Details"
+                    ? "vehicleBtn"
+                    : "inActiveBtn"
+                }
+                onClick={() => handleBtn(item)}>
+                {item}
+              </button>
+            );
           })}
         </div>
       </div>

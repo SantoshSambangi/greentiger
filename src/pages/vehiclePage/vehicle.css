@@ -117,12 +117,12 @@ p {
   border-radius: 8px;
 }
 
-/* .btnContainer button:hover {
+.vehicleBtn:hover{
   width: 200px;
-  background-color: #40f416;
+  /* background-color: #40f416; */
   color: white;
   transition: 1s 0.2s ease-in-out;
-} */
+}
 
 /* fliping card Styles */
 
