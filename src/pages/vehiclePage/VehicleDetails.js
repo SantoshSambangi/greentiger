@@ -11,8 +11,8 @@ const VehicleDetails = () => {
 
   const location = useLocation();
 
-  const data = useContextCustomHook();
-  console.log("Data", data);
+  const contextData = useContextCustomHook();
+  console.log("Data", contextData);
 
 
   const [date, setDate] = useState({

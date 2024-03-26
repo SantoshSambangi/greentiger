@@ -4,11 +4,11 @@ const AppDataContext = createContext(null);
 
 const DataProvider = (props) => {
   const [sample, setSample] = useState(2);
-  const [result, setResult] = useState(["santosh"]);
+  const [result, setResult] = useState([]);
 
   const memoizedvalue = useMemo(() => {
     return { result, setResult, sample, setSample };
-  }, [sample, setSample.result, setResult]);
+  }, [sample, setSample,result, setResult]);
 
   return (
     <AppDataContext.Provider value={memoizedvalue}>
