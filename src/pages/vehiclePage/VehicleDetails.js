@@ -14,6 +14,7 @@ const VehicleDetails = () => {
   const data = useContextCustomHook();
   console.log("Data", data);
 
+
   const [date, setDate] = useState({
     startDate: "",
     endDate: "",
@@ -50,12 +51,14 @@ const VehicleDetails = () => {
     if (item) {
       if (item.name === "state") {
         setFilterBmsData((prevData) => ({ ...prevData, state: "" }));
-      } else if (item.name === "locality");
+      } 
+      else if (item.name === "locality")
       {
         setFilterBmsData((prevData) => ({ ...prevData, locality: "" }));
       }
-    } else {
-      return null;
+      else {
+        return null;
+      } 
     }
   };
 

@@ -3,21 +3,22 @@ import { createContext, useContext, useMemo, useState } from "react";
 const AppDataContext = createContext(null);
 
 const DataProvider = (props) => {
+  const [sample, setSample] = useState(2);
+  const [result, setResult] = useState(["santosh"]);
 
-    const [sample, setSample] = useState(2);
-    const memoizedvalue = useMemo(() => {
-            return { sample, setSample };
-        }, [sample, setSample])
+  const memoizedvalue = useMemo(() => {
+    return { result, setResult, sample, setSample };
+  }, [sample, setSample.result, setResult]);
 
-    return (
-        <AppDataContext.Provider value={memoizedvalue}>
-            {props.children}
-        </AppDataContext.Provider>
-    )
-}
+  return (
+    <AppDataContext.Provider value={memoizedvalue}>
+      {props.children}
+    </AppDataContext.Provider>
+  );
+};
 
 const useContextCustomHook = () => {
-    return useContext(AppDataContext)
-}
+  return useContext(AppDataContext);
+};
 
-export {AppDataContext, DataProvider, useContextCustomHook};
+export { AppDataContext, DataProvider, useContextCustomHook };
