@@ -4,15 +4,19 @@ import "../vehiclePage/vehicle.css";
 import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
 import { FilterData, vehicleCardData } from "../../data/FilterData";
-import { useContextCustomHook } from "../../providers/AppDataProvider";
+import { useDataHook } from "../../providers/AppDataProvider";
 
 const VehicleDetails = () => {
+
   const navigate = useNavigate();
 
   const location = useLocation();
 
-  const contextData = useContextCustomHook();
-  console.log("Data", contextData);
+  // const contextData = useContextCustomHook();
+  // console.log("Data", contextData);
+
+  const data = useDataHook()
+  console.log(data)
 
 
   const [date, setDate] = useState({
@@ -24,16 +28,29 @@ const VehicleDetails = () => {
 
   const btnData = ["Vehicle Details", "Bms Details", "Vcu Details"];
 
-  const handleBtn = (item) => {
-    // console.log(item)
-    if (item === "Vehicle Details") {
-      navigate("/vehicledetails");
-    } else if (item === "Bms Details") {
-      navigate("/bms");
-    } else if (item === "Vcu Details") {
-      navigate("/vcu");
-    }
-  };
+  // const handleBtn = (item) => {
+  //   // console.log(item)
+  //   if (item === "Vehicle Details") {
+  //     navigate("/vehicledetails");
+  //   } else if (item === "Bms Details") {
+  //     navigate("/bms");
+  //   } else if (item === "Vcu Details") {
+  //     navigate("/vcu");
+  //   }
+  // };
+
+    const handleBtn = (item) => {
+        const routes = {
+            "Vehicle Details": "/vehicledetails",
+            "Bms Details": "/bms",
+            "Vcu Details": "/vcu"
+        };
+        const route = routes[item];
+        if (route) {
+            navigate(route);
+        }
+    };
+
 
   const [filterBmsData, setFilterBmsData] = useState({
     state: "",
@@ -46,19 +63,28 @@ const VehicleDetails = () => {
     profession: "",
   });
 
+  // const handleCheckBoxClear = (item) => {
+  //   // console.log(item)
+  //   if (item) {
+  //     if (item.name === "state") {
+  //       setFilterBmsData((prevData) => ({ ...prevData, state: "" }));
+  //     } 
+  //     else if (item.name === "locality")
+  //     {
+  //       setFilterBmsData((prevData) => ({ ...prevData, locality: "" }));
+  //     }
+  //     else {
+  //       return null;
+  //     } 
+  //   }
+  // };
+
   const handleCheckBoxClear = (item) => {
-    // console.log(item)
-    if (item) {
-      if (item.name === "state") {
-        setFilterBmsData((prevData) => ({ ...prevData, state: "" }));
-      } 
-      else if (item.name === "locality")
-      {
-        setFilterBmsData((prevData) => ({ ...prevData, locality: "" }));
-      }
-      else {
-        return null;
-      } 
+    if (!item) return;
+    const fieldToUpdate = item.name;
+
+    if (fieldToUpdate === "state" || fieldToUpdate === "locality") {
+        setFilterBmsData((prevData) => ({ ...prevData, [fieldToUpdate]: "" }));
     }
   };
 

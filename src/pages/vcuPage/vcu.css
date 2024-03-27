@@ -47,7 +47,8 @@
   width: 100px;
   /* background-color: #00aa13; */
   /* background-color: #0e1a77; */
-  background-color: red;
+  /* background-color: red; */
+  background-color: #f40013;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -114,7 +115,8 @@ p {
 .vcuBtn {
   width: 200px;
   /* background-color: white; */
-  background-color: red;
+  /* background-color: #ff0000; */
+  background-color: #f40013;
   /* color: #404fb1; */
   color: white;
   font-weight: bold;
@@ -123,7 +125,7 @@ p {
   font-size: 16px;
   padding: 6px 0px;
   border-radius: 8px;
-  border: 0.1px solid red;
+  border: 0.1px solid #f40013;
 }
 
 .inActiveBtn {

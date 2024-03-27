@@ -143,7 +143,9 @@ p {
   align-items: center;
   margin-inline: 30px;
 }
-
+.class1{
+  background-color: black;
+}
 /* .cardMainContainer {
   display: flex;
   flex-direction: column;
@@ -166,13 +168,12 @@ p {
   flex-wrap: wrap;
 } */
 
-.frontContent h1 {
+/* .frontContent h1 {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-}
+} */
 
 /* @media screen and (min-width: 768px) {
   .cardContainer {

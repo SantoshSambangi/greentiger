@@ -6,22 +6,18 @@ import { signOut } from "firebase/auth";
 import UserDisplayName from "../displayName/UserDisplayName";
 
 const NavBar = () => {
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
         navigate("/");
         window.alert("Signed out successfully");
       })
       .catch((error) => {
         console.log(error);
       });
-  };
-
-  const redirect = () => {
-    // navigate("/trial");
   };
 
   return (

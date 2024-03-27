@@ -32,5 +32,3 @@ const Card = (props) => {
 };
 
 export default Card;
-
-//className={`flip-card ${isFlipped ? 'flipped' : ''}`}

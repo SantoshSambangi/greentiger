@@ -3,6 +3,7 @@ import { createContext, useContext, useMemo, useState } from "react";
 const AppDataContext = createContext(null);
 
 const DataProvider = (props) => {
+  
   const [sample, setSample] = useState(2);
   const [result, setResult] = useState([]);
 
@@ -18,7 +19,12 @@ const DataProvider = (props) => {
 };
 
 const useContextCustomHook = () => {
-  return useContext(AppDataContext);
+  useContext(AppDataContext);
 };
 
-export { AppDataContext, DataProvider, useContextCustomHook };
+const useDataHook = () => {
+  const TotalData = useContext(AppDataContext)
+  return TotalData;
+}
+
+export { AppDataContext, DataProvider, useContextCustomHook , useDataHook};

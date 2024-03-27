@@ -44,7 +44,7 @@ const Vcu = () => {
       if (item.name === "state") {
         setFilterBmsData((prevData) => ({ ...prevData, state: "" }));
       }
-      else if (item.name === "locality");
+      else if (item.name === "locality")
       {
         setFilterBmsData((prevData) => ({ ...prevData, locality: "" }));
       }
