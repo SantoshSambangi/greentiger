@@ -8,4 +8,4 @@ const PageNotFound404 = () => {
   )
 }
 
-export default PageNotFound404
+export default PageNotFound404;

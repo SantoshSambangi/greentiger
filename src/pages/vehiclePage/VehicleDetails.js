@@ -24,8 +24,8 @@ const VehicleDetails = () => {
     endDate: "",
   });
 
-  // console.log(date);
-
+  console.log(date);
+  
   const btnData = ["Vehicle Details", "Bms Details", "Vcu Details"];
 
   // const handleBtn = (item) => {
@@ -41,9 +41,9 @@ const VehicleDetails = () => {
 
     const handleBtn = (item) => {
         const routes = {
-            "Vehicle Details": "/vehicledetails",
-            "Bms Details": "/bms",
-            "Vcu Details": "/vcu"
+            "Vehicle Details" : "/vehicledetails",
+            "Bms Details" : "/bms",
+            "Vcu Details" : "/vcu"
         };
         const route = routes[item];
         if (route) {
@@ -89,6 +89,7 @@ const VehicleDetails = () => {
   };
 
   return (
+    
     <div className="vcuContainer">
       {/* vehicle header */}
 

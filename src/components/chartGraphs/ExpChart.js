@@ -7,6 +7,7 @@ import { Bar } from 'react-chartjs-2';
 // )
 
 const labels = ["jan", "feb", "mar", "apr", "may"];
+
 const options = {
     plugins:{
         legend:{

@@ -1,6 +1,42 @@
  //ctrl + shift + g its for git stged for all files
  //npm audit fix --force 
 
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+const DateRangePicker = () => {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  const handleStartDateChange = (date) => {
+    setStartDate(date);
+    if (date >= endDate) {
+      setEndDate(new Date(date.getTime() + 86400000)); // Add one day to start date
+    }
+  };
+
+  const handleEndDateChange = (date) => {
+    setEndDate(date);
+    if (date <= startDate) {
+      setStartDate(new Date(date.getTime() - 86400000)); // Subtract one day from end date
+    }
+  };
+
+  return (
+    <div>
+      <label>Start Date:</label>
+      <DatePicker selected={startDate} onChange={handleStartDateChange} dateFormat="yyyy-MM-dd" />
+
+      <label>End Date:</label>
+      <DatePicker selected={endDate} onChange={handleEndDateChange} dateFormat="yyyy-MM-dd" />
+    </div>
+  );
+};
+
+export default DateRangePicker;
+
+
 // have to import classNames package className={classNames(btnStyles, styles.btnStyles)} 
 
 import React from 'react';
@@ -731,3 +767,64 @@ const FilterBox = (props) => {
 };
 
 export default FilterBox;
+
+
+
+//fireBase authentication 
+
+import React, { useState } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+// Initialize Firebase
+const firebaseConfig = {
+  // Your Firebase config object here
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const EmailAuthentication = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignUp = async () => {
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      // User signed up successfully
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const handleSignIn = async () => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      // User signed in successfully
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await firebase.auth().signOut();
+      // User signed out successfully
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  return (
+    <div>
+      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+      <button onClick={handleSignUp}>Sign Up</button>
+      <button onClick={handleSignIn}>Sign In</button>
+      <button onClick={handleSignOut}>Sign Out</button>
+    </div>
+  );
+};
+
+export default EmailAuthentication;

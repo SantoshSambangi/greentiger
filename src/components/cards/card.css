@@ -1,8 +1,8 @@
 .flip-card {
-  width: 380px;
-  height: 180px;
-  /* width: 28%;
-  height: 20%; */
+  /* width: 380px;
+  height: 180px; */
+  width: 31vw;
+  height: 31vh;
   perspective: 1000px;
   cursor: pointer;
   background-color: #00aa13;

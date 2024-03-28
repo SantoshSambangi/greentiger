@@ -136,6 +136,7 @@ const LoginPage = () => {
     if (validateForm()) { // Validate form before attempting login
       signInWithEmailAndPassword(auth, formData.email, formData.password)
         .then((userCredential) => {
+          console.log(userCredential)
           const user = userCredential.user;
           navigate("/home");
           localStorage.setItem("user_id", user.uid);
@@ -152,7 +153,6 @@ const LoginPage = () => {
   return (
     <div className="loginContainer">
       <form className="loginForm">
-
       <img
           src="https://s3.ap-south-1.amazonaws.com/greentiger.in-content/brand_icons/logo.png"
           alt="logo"
