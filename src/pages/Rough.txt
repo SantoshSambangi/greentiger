@@ -1,0 +1,830 @@
+ //ctrl + shift + g its for git stged for all files
+ //npm audit fix --force 
+
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+const DateRangePicker = () => {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  const handleStartDateChange = (date) => {
+    setStartDate(date);
+    if (date >= endDate) {
+      setEndDate(new Date(date.getTime() + 86400000)); // Add one day to start date
+    }
+  };
+
+  const handleEndDateChange = (date) => {
+    setEndDate(date);
+    if (date <= startDate) {
+      setStartDate(new Date(date.getTime() - 86400000)); // Subtract one day from end date
+    }
+  };
+
+  return (
+    <div>
+      <label>Start Date:</label>
+      <DatePicker selected={startDate} onChange={handleStartDateChange} dateFormat="yyyy-MM-dd" />
+
+      <label>End Date:</label>
+      <DatePicker selected={endDate} onChange={handleEndDateChange} dateFormat="yyyy-MM-dd" />
+    </div>
+  );
+};
+
+export default DateRangePicker;
+
+
+// have to import classNames package className={classNames(btnStyles, styles.btnStyles)} 
+
+import React from 'react';
+
+function MyComponent() {
+  return (
+    <ul>
+      <li className={["class1", "class2"].join(" ")}>List item</li>
+    </ul>
+  );
+}
+
+export default MyComponent;
+
+ {/* <div className="filterBox">
+        <div className="filterTitle">
+          <span>State</span>
+          <span>🧹</span>
+        </div>
+
+        <div className="filterSearch">
+          <VscSearch size={20} />
+          <input type="text" size="10" placeholder="Search.." />
+        </div>
+
+        <div className="filterCheck">
+          <input type="checkbox" />
+          <input type="checkbox" />
+        </div>
+      </div> */}
+
+      {/* <FlipCard
+            frontContent={
+              <div>
+                <div className="num">0.0 </div>
+                <div> Avg Motor Temp (&deg;C)</div>
+              </div>
+            }
+            backContent={<p>Back Content</p>}
+          />
+
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <FlipCard
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          /> */}
+
+
+          {/* <div className="filterContainer">
+        {Object.keys(filterData).map((tab, index) => (
+          <div
+            key={index}
+            className="filter"
+            onClick={() => handleOpenModal(tab)}
+          >
+            <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
+
+            <span>
+              <FilterAltIcon />
+            </span>
+          </div>
+        ))}
+      </div> */}
+
+  const Navbar = () => {
+    
+  const location = useLocation();
+
+  return (
+    <nav>
+      <ul>
+        <li className={location.pathname === '/' ? 'active' : ''}>
+          <Link to="/">Home</Link>
+        </li>
+        <li className={location.pathname === '/about' ? 'active' : ''}>
+          <Link to="/about">About</Link>
+        </li>
+        {/* Add more Link items for other routes */}
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+// for active button 
+
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
+  return (
+    <div className="btnContainer">
+      <button
+        className={activeButton === 'vehicle' ? 'activeButton' : ''}
+        onClick={redirectToVehicle}
+      >
+        Vehicle Details
+      </button>
+      <button
+        className={activeButton === 'bms' ? 'activeButton' : ''}
+        onClick={redirectToBms}
+      >
+        BMS Details
+      </button>
+      <button
+        className={activeButton === 'vcu' ? 'activeButton' : ''}
+        onClick={redirectToVcu}
+      >
+        VCU Details
+      </button>
+    </div>
+  );
+
+export default ButtonComponent;
+
+
+//form Handling 
+
+import React, { useState } from "react";
+import { signInWithEmailAndPassword, sig } from "firebase/auth";
+// import "./login.css";
+import "../loginPage/myLogin.css"
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../config/firebase";
+
+const LoginPage = () => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const isValidEmail = (email) => {
+    // Regular expression for basic email validation
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    return emailRegex.test(email);
+  };
+
+  const isValidPassword = (password) => {
+    // Regular expressions for password validation
+    const symbolRegex = /[!@#$%^&*(),.?":{}|<>]/;
+    const numberRegex = /[0-9]/;
+    const upperCaseRegex = /[A-Z]/;
+    const lowerCaseRegex = /[a-z]/;
+    return (
+      password.length >= 8 &&
+      symbolRegex.test(password) &&
+      numberRegex.test(password) &&
+      upperCaseRegex.test(password) &&
+      lowerCaseRegex.test(password)
+    );
+  };
+
+  const validateForm = () => {
+    let newErrors = {};
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!isValidEmail(formData.email)) {
+      newErrors.email = "Invalid email format";
+    }
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (!isValidPassword(formData.password)) {
+      newErrors.password =
+        "Password must be at least 8 characters long and contain at least one symbol, one number, one uppercase letter, and one lowercase letter";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const onLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, formData.email, formData.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        navigate("/home");
+        localStorage.setItem("user_id", user.uid);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
+  return (
+    <div className="loginContainer">
+      <form className="loginForm">
+        <img
+          src="https://s3.ap-south-1.amazonaws.com/greentiger.in-content/brand_icons/logo.png"
+          alt="logo"
+          style={{
+            width: "90%",
+            height: "20%",
+            padding: "10px",
+          }}
+        />
+
+        <div className="formGroup">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={formData.email}
+            placeholder="Enter your email"
+            required
+            onChange={handleChange}
+          />
+          {errors.email && (
+            <div className="error">{errors.email}</div>
+          )}
+        </div>
+
+        <div className="formGroup">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            placeholder="Enter your password"
+            id="password"
+            required
+            onChange={handleChange}
+          />
+          {errors.password && <div className="error">{errors.password}</div>}
+        </div>
+
+        <button type="submit" onClick={onLogin}>
+          Login
+        </button>
+      </form>
+    </div>
+  );
+};
+export default LoginPage;
+
+
+// card media queries & styles
+
+.card {
+  width: calc(33.33% - 20px); /* 20px is the total margin space between cards */
+  height: calc(33.33vh - 20px); /* Adjust based on your design */
+  margin: 10px;
+  float: left;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px); /* For smaller screens, show 2 cards per row */
+    height: calc(50vh - 20px); /* Adjust based on your design */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px); /* For even smaller screens, show 1 card per row */
+    height: calc(100vh - 20px); /* Adjust based on your design */
+  }
+}
+
+//Bms previous page
+
+import React, { useState } from "react";
+import "../bmsPage/bms.css";
+import { useNavigate } from "react-router-dom";
+import FilterBox from "../../components/filterBox/FilterBox";
+import Card from "../../components/cards/Card";
+import { FilterData } from "../../data/FilterData";
+const Bms = () => {
+  const navigate = useNavigate();
+
+  const redirectToVcu = () => {
+    navigate("/vcu");
+  };
+  const redirectToBms = () => {
+    navigate("/bms");
+  };
+
+  const redirectToVehicle = () => {
+    navigate("/vehicledetails");
+  };
+
+  const [date, setDate] = useState({
+    startDate: "",
+    endDate: "",
+  });
+
+  // console.log(date);
+
+  return (
+    <div className="bmsContainer">
+      {/* vehicle header */}
+      <div className="bmsHeader">
+        <div className="bmsLogo">
+          <img
+            className="bmsImg"
+            src="https://s3.ap-south-1.amazonaws.com/greentiger.in-content/brand_icons/logo.png"
+            alt="logo"
+          />
+        </div>
+
+        <div className="bmsRightBlock">
+          <div className="bmsTitle">
+            <h1>BMS Details</h1>
+          </div>
+
+          <div className="bmsVehicleNumbers">
+            <h2>2</h2>
+            <p>Vehicles</p>
+          </div>
+
+          <div className="bmsDateRange">
+            <input
+              type="date"
+              placeholder="Select a date"
+              value={date.startDate}
+              onChange={(e) => setDate({ ...date, startDate: e.target.value })}
+            />
+            <input
+              type="date"
+              value={date.endDate}
+              onChange={(e) => setDate({ ...date, endDate: e.target.value })}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* vehicle filter */}
+
+      <div className="bmsFilterContainer">
+        {FilterData &&
+          FilterData.map((item, index) => {
+            return (
+              <FilterBox key={index}
+                title={item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+                label={item.options.map((item) => item.label)}
+              />
+            );
+          })}
+        {/* <FilterBox title={<h4>Locality</h4>} />
+        <FilterBox title={<h4>Device Id</h4>} />
+        <FilterBox title={<h4>Brand</h4>} />
+        <FilterBox title={<h4>Modal</h4>} />
+        <FilterBox title={<h4>Age</h4>} />
+        <FilterBox title={<h4>Gender</h4>} />
+        <FilterBox title={<h4>Profession</h4>} /> */}
+      </div>
+
+      {/* Cards Container */}
+
+      <div className="bmsCardMainContainer">
+        <div className="bmsCardContainer">
+          <Card
+            color="#0e1a77"
+            frontContent={
+              <div className="bmsFrontContent">
+                <h1>0</h1>
+                <p>Total Distance (KM)</p>
+              </div>
+            }
+            backContent={<p>Back Content</p>}
+          />
+          <Card
+            color="#0e1a77"
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <Card
+            color="#0e1a77"
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <Card
+            color="#0e1a77"
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <Card
+            color="#0e1a77"
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <Card
+            color="#0e1a77"
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+        </div>
+
+        {/* Button container */}
+
+        <div className="bmsBtnContainer">
+          <button onClick={redirectToVehicle}>Vehicle Details</button>
+          <button onClick={redirectToBms}>BMS Details</button>
+          <button onClick={redirectToVcu}>VCU Details</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Bms;
+
+// vehicle Details model mui
+
+
+import dayjs from "dayjs";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import CustomModal from "../../components/modal/Modal";
+import DateSelectionPicker from "../../components/dateRangePicker/DateSelectionPicker";
+import Card from "../../components/cards/Card";
+import BarChart from "../../components/chartGraphs/BarChart";
+import BarChart from "../../components/chartGraphs/BarChart";
+
+{/* modal */}
+      {/* <CustomModal
+        isOpen={modalOpen}
+        handleClose={handleCloseModal}
+        title={activeTab}
+        data={filterData[activeTab]}
+        onSubmit={handleModalSubmit}
+        filterData={filterData} // Pass the filterData prop here
+      /> */}
+
+
+const [modalOpen, setModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState(null);
+
+  const [modalData, setModalData] = useState(null);
+
+  const [chartData, setChartData] = useState({
+    labels: [],
+
+    datasets: [
+      {
+        label: "Users Gained ",
+        data: [],
+        backgroundColor: [
+          "rgba(75,192,192,1)",
+          "&quot;#ecf0f1",
+          "#50AF95",
+          "#f3ba2f",
+          "#2a71d0",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ],
+  });
+
+  const filterData = {
+    State: ["Banglore", "Chennai", "Pune", "Mumbai", "Jaipur", "Bhubaneshwar"],
+    City: ["Vehicle 1", "Vehicle 2", "Vehicle 3"],
+    DeviceId: ["Customer 1", "Customer 2", "Customer 3"],
+  };
+
+  const handleOpenModal = (tab) => {
+    setActiveTab(tab);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleModalSubmit = (data) => {
+    console.log(data, "on handel modal submit");
+    setModalData(data);
+  };
+//filter// import React from "react";
+// import "../filterBox/filterBox.css";
+// import { VscSearch } from "react-icons/vsc";
+// import { CiEraser } from "react-icons/ci";
+// import { FilterData } from "../../data/FilterData";
+// const FilterBox = (props) => {
+//   const { title, label } = props;
+
+//   return (
+//     <div className="filterBox">
+//       <div className="filterTitle">
+//         <span className="">{title}</span>
+//         <span>
+//           <CiEraser />
+//         </span>
+//       </div>
+
+//       <div className="filterSearch">
+//         <VscSearch size={20} />
+//         <input type="text" size="10" placeholder="Search.." />
+//       </div>
+
+//       <div className="filterCheck">
+//         {FilterData && FilterData.map((item, index) => (
+//           <div key={index}>
+//             {item.options.map((option, idx) => (
+//               <div key={idx}>
+//                 <input type="checkbox" />
+//                 <label>{option.label}</label>
+//               </div>
+//             ))}
+//           </div>
+//         ))}
+//         {/* <input type="checkbox" />
+//         <label>{label}</label> */}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default FilterBox;
+
+
+import React, { useState } from "react";
+import "../filterBox/filterBox.css";
+import { VscSearch } from "react-icons/vsc";
+import { CiEraser } from "react-icons/ci";
+
+const FilterBox = (props) => {
+
+    const { title, options, filterBmsData, setFilterBmsData } = props;
+
+    const handleCheckboxChange = (optionValue, name) => {
+        setFilterBmsData((prevData) => ({
+            ...prevData,
+            [name]: optionValue,
+        }));
+    };
+
+    return (
+        <div className="filterBox">
+            <div className="filterTitle">
+                <span className="">{title}</span>
+                <span>
+                    <CiEraser />
+                </span>
+            </div>
+
+            <div className="filterSearch">
+                <VscSearch size={20} />
+                <input type="text" size="10" placeholder="Search.." />
+            </div>
+
+            {options?.map((option) => (
+                <div key={option.value} className="filterCheck">
+                    <input
+                        type="checkbox"
+                        value={option.value}
+                        checked={
+                            filterBmsData[title.toLowerCase()] === option.value
+                        }
+                        onChange={() =>
+                            handleCheckboxChange(
+                                option.value,
+                                title.toLowerCase()
+                            )
+                        }
+                    />
+                    <label>{option.label}</label>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default FilterBox;
+
+// Card container
+{/* <Card
+            frontContent={
+              <div className="frontContent">
+                <h1>0</h1>
+                <p>Total Distance (KM)</p>
+              </div>
+            }
+            backContent={<ExpChart />}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<BarChart />}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<PieChart />}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<LineChart />}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          />
+          <Card
+            frontContent={<h2>Front Content</h2>}
+            backContent={<p>Back Content</p>}
+          /> */}
+
+          // Btn container
+          {/* <button onClick={redirectToVehicle}>Vehicle Details</button>
+          <button onClick={redirectToBms}>BMS Details</button>
+          <button onClick={redirectToVcu}>VCU Details</button> */}
+
+
+          // different Colors for different Cards
+
+          const colors = [
+              "#ff0000",
+              "#ffff00",
+              "#00ff00",
+              "#800080",
+              "#ffa500",
+              "#f5f5dc",
+            ];
+
+          {bmsCardData?.map((item, index) => {
+            const colorIndex = index % colors.length;
+            return (
+              <Card
+                key={index}
+                frontContent={item.title}
+                backContent={item?.description}
+                //color="#0e1a77"
+                color={colors[colorIndex]}
+              />
+            );
+          })}
+
+
+//filter box un checking not working code
+import React, { useState } from "react";
+import "../filterBox/filterBox.css";
+import { VscSearch } from "react-icons/vsc";
+import { CiEraser } from "react-icons/ci";
+
+const FilterBox = (props) => {
+
+    const { title, options, filterBmsData, setFilterBmsData, eraseAll } = props;
+    
+    const [searchQuery, setSearchQuery] = useState("");
+
+
+    const handleCheckboxChange = (optionValue, name) => {
+        
+        setFilterBmsData((prevData) => {
+            const updatedData = { ...prevData };
+            if (prevData[name] === optionValue) {
+                updatedData[name] = "";
+            } else {
+                updatedData[name] = optionValue;
+            }
+            return updatedData;
+        });
+    };
+
+
+    const filteredOptions = options?.filter((option) =>
+        option.label.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    
+    return (
+        <div className="filterBox">
+            <div className="filterTitle">
+                <span className="">{title}</span>
+                <span onClick={eraseAll}>
+                    <CiEraser />
+                </span>
+            </div>
+
+            <div className="filterSearch">
+                <VscSearch size={20} />
+                <input
+                    type="text"
+                    size="10"
+                    placeholder="Search.."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+            </div>
+
+            {filteredOptions?.map((option) => (
+                <div key={option.value} className="filterCheck">
+                    <input
+                        type="checkbox"
+                        value={option.value}
+                        checked={filterBmsData[title.toLowerCase()] === option.value}
+                        onChange={() =>
+                            handleCheckboxChange(
+                                option.value,
+                                title.toLowerCase()
+                            )
+                        }
+                    />
+                    <label>{option.label}</label>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default FilterBox;
+
+
+
+//fireBase authentication 
+
+import React, { useState } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+// Initialize Firebase
+const firebaseConfig = {
+  // Your Firebase config object here
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const EmailAuthentication = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignUp = async () => {
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      // User signed up successfully
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const handleSignIn = async () => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      // User signed in successfully
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await firebase.auth().signOut();
+      // User signed out successfully
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  return (
+    <div>
+      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+      <button onClick={handleSignUp}>Sign Up</button>
+      <button onClick={handleSignIn}>Sign In</button>
+      <button onClick={handleSignOut}>Sign Out</button>
+    </div>
+  );
+};
+
+export default EmailAuthentication;

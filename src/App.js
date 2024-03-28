@@ -4,18 +4,25 @@ import LoginPage from "./pages/loginPage/LoginPage";
 import Home from "./pages/homePage/Home";
 import Vcu from "./pages/vcuPage/Vcu";
 import Bms from "./pages/bmsPage/Bms";
-import Trail from "./pages/trailPage/Trail";
+// import Trail from "./pages/trailPage/Trail";
+import { DataProvider } from "./providers/AppDataProvider";
+import VehicleDetails from "./pages/vehiclePage/VehicleDetails";
+import PageNotFound404 from "./pages/pageNotFound/PageNotFound404";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/home" element={<Home/>} />
-        <Route path="/vcu" element={<Vcu/>} />
-        <Route path="/bms" element={<Bms/>}/>
-        <Route path="/trail" element={<Trail/>} />
-      </Routes>
+      <DataProvider>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/vehicledetails" element={<VehicleDetails />} />
+          <Route path="/bms" element={<Bms />} />
+          <Route path="/vcu" element={<Vcu />} />
+          {/* <Route path="/trail" element={<Trail />} /> */}
+          <Route path="*" element={<PageNotFound404 />} />
+        </Routes>
+      </DataProvider>
     </div>
   );
 }

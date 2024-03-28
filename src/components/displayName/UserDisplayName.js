@@ -3,16 +3,17 @@ import { onAuthStateChanged } from "firebase/auth";
 import React, { useState, useEffect } from "react";
 import { auth } from "../../config/firebase";
 const UserDisplayName = () => {
-  const [user, setUser] = useState(null);
+
+  // const [user, setUser] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
+
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         const email = user.email;
-        // ...
         setUserEmail(email);
       } else {
         // User is signed out
@@ -24,7 +25,7 @@ const UserDisplayName = () => {
   return (
     <>
       <div>
-        <p>Welcome,{userEmail ? userEmail : "User"} </p>
+        <p style={{color:"red"}}>Welcome,{userEmail ? userEmail : "User"} </p>
       </div>
     </>
   );

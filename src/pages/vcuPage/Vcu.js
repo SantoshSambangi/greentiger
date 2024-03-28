@@ -1,166 +1,139 @@
 import React, { useState } from "react";
-// import dayjs from "dayjs";
-import { useNavigate } from "react-router-dom";
 import "../vcuPage/vcu.css";
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import FlipCard from "../../components/flipCard/FlipCard";
-import CustomModal from "../../components/modal/Modal";
-import DateSelectionPicker from "../../components/dateRangePicker/DateSelectionPicker";
+import { useLocation, useNavigate } from "react-router-dom";
+import FilterBox from "../../components/filterBox/FilterBox";
+import { FilterData, vcuCardData } from "../../data/FilterData";
+import Card from "../../components/cards/Card";
+
 const Vcu = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const [modalData, setModalData] = useState(null);
+  const btnData = ["Vehicle Details", "Bms Details", "Vcu Details"];
 
-  const [chartData, setChartData] = useState({
-    labels: [],
+  const handleBtn = (item) => {
+    // console.log(item)
+    if (item === "Vehicle Details") {
+      navigate("/vehicledetails");
+    } else if (item === "Bms Details") {
+      navigate("/bms");
+    } else if (item === "Vcu Details") {
+      navigate("/vcu");
+    }
+  };
 
-    datasets: [
-      {
-        label: "Users Gained ",
-        data: [],
-        backgroundColor: [
-          "rgba(75,192,192,1)",
-          "&quot;#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-    ],
+  const [date, setDate] = useState({
+    startDate: "",
+    endDate: "",
   });
 
-  const filterData = {
-    State: ["Banglore", "Chennai", "Pune", "Mumbai", "Jaipur", "Bhubaneshwar"],
-    City: ["Vehicle 1", "Vehicle 2", "Vehicle 3"],
-    DeviceId: ["Customer 1", "Customer 2", "Customer 3"],
-  };
+  const [filterBmsData, setFilterBmsData] = useState({
+    state: "",
+    locality: "",
+    deviceId: "",
+    brand: "",
+    modal: "",
+    age: "",
+    gender: "",
+    profession: "",
+  });
 
-  const handleOpenModal = (tab) => {
-    setActiveTab(tab);
-    setModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setModalOpen(false);
-  };
-
-  const handleModalSubmit = (data) => {
-    console.log(data, "on handel modal submit");
-    setModalData(data);
-  };
-
-  const navigate = useNavigate();
-
-  const redirectToVcu = () => {
-    // navigate("/vcu");
-  };
-  const redirectToBms = () => {
-    // navigate("/bms");
-  };
-  const redirectToVehicle = () => {
-    // navigate("/trial");
+  const handleCheckBoxClear = (item) => {
+    // console.log(item)
+    if (item) {
+      if (item.name === "state") {
+        setFilterBmsData((prevData) => ({ ...prevData, state: "" }));
+      }
+      else if (item.name === "locality")
+      {
+        setFilterBmsData((prevData) => ({ ...prevData, locality: "" }));
+      }
+    } 
+    else {
+      return null;
+    }
   };
 
   return (
     <div className="vcuContainer">
-      {/* modal */}
-      <CustomModal
-        isOpen={modalOpen}
-        handleClose={handleCloseModal}
-        title={activeTab}
-        data={filterData[activeTab]}
-        onSubmit={handleModalSubmit}
-        filterData={filterData} // Pass the filterData prop here
-      />
-
-      {/* vcu header */}
-
       <div className="vcuHeader">
-        <div className="logo">
+        <div className="vcuLogo">
           <img
-            className="logoImg"
+            className="vcuImg"
             src="https://s3.ap-south-1.amazonaws.com/greentiger.in-content/brand_icons/logo.png"
             alt="logo"
           />
         </div>
+        <div className="vcuRightBlock">
+          <div className="vcuTitle">
+            <h1>VCU Details</h1>
+          </div>
 
-        <div className="title">
-          <h1>VCU Details</h1>
-        </div>
+          <div className="vcuVehicleNumbers">
+            <h2>2</h2>
+            <p>Vehicles</p>
+          </div>
 
-        <div>
-          <DateSelectionPicker />
+          <div className="vcuDateRange">
+            <input
+              type="date"
+              value={date.startDate}
+              onChange={(e) => setDate({ ...date, startDate: e.target.value })}
+            />
+            <input
+              type="date"
+              value={date.endDate}
+              onChange={(e) => setDate({ ...date, endDate: e.target.value })}
+            />
+          </div>
         </div>
       </div>
 
-      {/* Vcu filter */}
-
-      <div className="filterContainer">
-        {Object.keys(filterData).map((tab, index) => (
-          <div
+      <div className="vcuFilterContainer">
+        {FilterData.map((item, index) => (
+          <FilterBox
             key={index}
-            className="filter"
-            onClick={() => handleOpenModal(tab)}
-          >
-            <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
-
-            <span>
-              <FilterAltIcon />
-            </span>
-          </div>
+            title={item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+            options={item.options}
+            filterBmsData={filterBmsData}
+            setFilterBmsData={setFilterBmsData}
+            eraseAll={() => handleCheckBoxClear(item)}
+          />
         ))}
       </div>
 
-      {/* Cards Container */}
-
-      <div className="bottomContainer">
-        <div className="cardContainer">
-          <FlipCard
-            frontContent={
-              <div>
-                <div className="num">0.0 </div>
-                <div> Avg Motor Temp (&deg;C)</div>
-              </div>
-            }
-            backContent={<p>Back Content</p>}
-          />
-
-          <FlipCard
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-
-          <FlipCard
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <FlipCard
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <FlipCard
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
-          <FlipCard
-            frontContent={<h2>Front Content</h2>}
-            backContent={<p>Back Content</p>}
-          />
+      <div className="vcuCardMainContainer">
+        <div className="vcuCardContainer">
+          {vcuCardData?.map((item, index) => {
+            return (
+              <Card
+                key={index}
+                frontContent={item.title}
+                backContent={item?.description}
+                color="red"
+              />
+            );
+          })}
         </div>
-
-        {/* Button container */}
-
-        <div className="btnContainer">
-          <button onClick={redirectToVehicle}>Vehicle Details</button>
-          <button onClick={redirectToVcu}>VCU Details</button>
-          <button onClick={redirectToBms}>BMS Details</button>
+        <div className="vcuBtnContainer">
+          {btnData.map((item, index) => {
+            return (
+              <button
+                key={index}
+                className={
+                  location.pathname === "/vcu" && item === "Vcu Details"
+                    ? "vcuBtn"
+                    : "inActiveBtn"
+                }
+                onClick={() => handleBtn(item)}
+              >
+                {item}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>
   );
 };
-
 export default Vcu;

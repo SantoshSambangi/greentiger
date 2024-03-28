@@ -1,50 +1,45 @@
-.bmsContainer {
-  /* height: auto; */
-  min-height: 100vh;
+.vcuContainer {
   height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: #f2f2f2;
-  /* background-color: red; */
   flex-wrap: wrap;
+  /* background-color: black; */
 }
 
 /* Vcu Header styles */
-.bmsHeader {
+.vcuHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* background-color: aqua; */
   padding: 0px 10px;
 }
-
-.bmsRightBlock {
+.vcuRightBlock {
   display: flex;
   justify-content: space-between;
   gap: 80px;
   align-items: center;
   padding: 0px 30px;
 }
-
-.bmsLogo {
+.logo {
   width: 200px;
 }
-
-.bmsImg {
+.logoImg {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.bmsTitle h1 {
+.title h1 {
   font-family: "Segoe-UI-bold";
 }
 
-.bmsVehicleNumbers {
+.vehicleNumbers {
   border: none;
   height: 50px;
   width: 100px;
-  /* background-color: #00aa13; */
-  background-color: #0e1a77;
+  background-color: #00aa13;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -53,20 +48,20 @@
   border-radius: 8px;
 }
 
-.bmsVehicleNumbers h2,
+.vehicleNumbers h2,
 p {
   font-family: "Segoe UI";
   font-weight: 600;
   color: white;
 }
-.bmsDateRange {
+.dateRange {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
-.bmsDateRange input {
+.dateRange input {
   background-color: lightgray;
-  padding: 4px 10px;
+  padding: 5px 10px;
   outline: none;
   border: none;
   border-radius: 10px;
@@ -74,7 +69,7 @@ p {
 
 /* filter styles */
 
-.bmsFilterContainer {
+.filterContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -84,27 +79,29 @@ p {
 }
 
 /* button styles */
-.bmsBtnContainer {
+
+.btnContainer {
   display: flex;
   justify-content: center;
   gap: 30px;
 }
 
-.bmsBtn {
+.vehicleBtn {
   width: 200px;
   /* background-color: white; */
-  background-color: #404fb1;
-  /* color: #404fb1; */
+  /* background-color: #40f416; */
+  background-color: #00aa13;
+  /* color: #40f416; */
   color: white;
   font-weight: bold;
   font-family: "Segoe UI";
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* border: 1px solid #40f416; */
+  border: 1px solid #00aa13;
   font-size: 16px;
-  padding: 6px 0px;
+  padding: 8px 0px;
   border-radius: 8px;
-  border: 0.1px solid #404fb1;
 }
-
 .inActiveBtn {
   width: 200px;
   background-color: white;
@@ -113,44 +110,81 @@ p {
   font-weight: bold;
   font-family: "Segoe UI";
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  border: 1px solid #40f416;
+  /* border: 1px solid #40f416; */
+  border: 1px solid #00aa13;
   font-size: 16px;
   padding: 8px 0px;
   border-radius: 8px;
 }
 
-/* .bmsBtnContainer button:hover {
+.vehicleBtn:hover {
   width: 200px;
-  background-color: #404fb1;
+  /* background-color: #40f416; */
   color: white;
   transition: 1s 0.2s ease-in-out;
-} */
+}
 
 /* fliping card Styles */
 
-.bmsCardMainContainer {
+.cardMainContainer {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 4px 0px;
 }
 
-.bmsCardContainer {
+.cardContainer {
   padding: 8px 0px;
   display: grid;
   grid-template-columns: repeat(3, auto);
-  /* flex-wrap: wrap; */
   gap: 10px;
   margin: auto;
   justify-content: space-between;
   align-items: center;
   margin-inline: 30px;
 }
+.class1{
+  background-color: black;
+}
 
-.bmsFrontContent h1 {
+/* .cardMainContainer {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0px;
+}
+
+.cardContainer {
+  padding: 8px 0px;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(380px, 1fr)
+  ); 
+  gap: 10px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 30px;
+  flex-wrap: wrap;
+} */
+
+/* .frontContent h1 {
+  display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 10px; */
+  margin-bottom: 10px;
+} */
+
+/* @media screen and (min-width: 768px) {
+  .cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  }
 }
+
+@media screen and (min-width: 1200px) {
+  .cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    margin-inline: 60px; 
+  }
+} */

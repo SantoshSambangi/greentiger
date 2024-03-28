@@ -1,0 +1,58 @@
+.filterBox {
+  padding: 1px 5px;
+  display: flex;
+  width: 150px;
+  height: 70px;
+  flex-direction: column;
+  gap: 3px;
+  border: 0.5px solid red;
+  border-radius: 5px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.filterBox::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.filterTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: gray; */
+  background-color: #f2f2f2;
+  padding: 0px 5px;
+  justify-content: space-between;
+  font-family: "Segoe UI";
+  position: sticky;
+  top: 0px;
+}
+
+.filterSearch {
+  display: flex;
+  background-color: white;
+  position: sticky;
+  top: 20px;
+}
+
+.filterSearch input {
+  display: flex;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding-left: 5px;
+  /* position: sticky;
+  top: 0px; */
+}
+
+.filterCheck {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  /* justify-content: flex-start;
+  align-items: center;
+  margin-top: 2px;
+  text-align: center; */
+}

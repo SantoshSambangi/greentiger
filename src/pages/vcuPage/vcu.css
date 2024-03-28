@@ -1,15 +1,16 @@
+/* vcu Header & date range */
+
 .vcuContainer {
-  /* max-height: 100%; */
+  /* height: auto; */
+  min-height: 100vh;
   height: 100vh;
-  /* height: calc(100vh - 200px ); */
   width: 100%;
-  flex-wrap: wrap;
+  background-color: #f2f2f2;
   /* background-color: red; */
-  /* background-color: white; */
+  flex-wrap: wrap;
 }
 
 /* Vcu Header styles */
-
 .vcuHeader {
   display: flex;
   justify-content: space-between;
@@ -18,86 +19,125 @@
   padding: 0px 10px;
 }
 
-.logo {
-  width: 300px;
+.vcuRightBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  align-items: center;
+  padding: 0px 30px;
 }
 
-.logoImg {
+.vcuLogo {
+  width: 200px;
+}
+
+.vcuImg {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* filter styles */
+.vcuTitle h1 {
+  font-family: "Segoe-UI-bold";
+}
 
-.filterContainer {
+.vcuVehicleNumbers {
+  border: none;
+  height: 50px;
+  width: 100px;
+  /* background-color: #00aa13; */
+  /* background-color: #0e1a77; */
+  /* background-color: red; */
+  background-color: #f40013;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.vcuVehicleNumbers > h2,
+p {
+  font-family: "Segoe UI";
+  font-weight: 600;
+  color: white;
+}
+.vcuDateRange {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.vcuDateRange input {
+  background-color: lightgray;
+  padding: 4px 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+/* filter container */
+.vcuFilterContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  padding: 0px 10px;
-  /* background-color: salmon; */
+  margin-top: 8px;
+  padding: 0px 12px;
 }
 
-.filter {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f1f1f1;
-  border: 1px solid gray;
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 20px;
-  align-items: center;
-  width: 20%;
-  border-radius: 10px;
-}
-
-/* button styles */
-
-.btnContainer {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.btnContainer button {
-  width: 200px;
-  background-color: red;
-  color: black;
-}
-
-.btnContainer button:hover {
-  width: 200px;
-  background-color: green;
-  color: white;
-  transition: 1s ease-in-out;
-}
-
-/* fliping card Styles */
-
-.bottomContainer{
+/* Card Container */
+.vcuCardMainContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 10px 0px;
+  gap: 10px;
+  padding: 4px 0px;
 }
 
-.cardContainer {
+.vcuCardContainer {
+  padding: 8px 0px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   /* flex-wrap: wrap; */
-  gap: 20px;
+  gap: 10px;
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  max-width: 100%;
-  /* width: 100vw; */
-  /* margin: 30px 30px; */
-  /* overflow: hidden; */
   margin-inline: 30px;
-  /* auto auto auto auto auto auto; */
-  /* max-width: 1400px;
-  width: 100%;
-  overflow-x: scroll; */
+}
+
+.vcuBtnContainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+.vcuBtn {
+  width: 200px;
+  /* background-color: white; */
+  /* background-color: #ff0000; */
+  background-color: #f40013;
+  /* color: #404fb1; */
+  color: white;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  padding: 6px 0px;
+  border-radius: 8px;
+  border: 0.1px solid #f40013;
+}
+
+.inActiveBtn {
+  width: 200px;
+  background-color: white;
+  /* color: #40f416; */
+  color: black;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #40f416;
+  font-size: 16px;
+  padding: 8px 0px;
+  border-radius: 8px;
 }
