@@ -2,7 +2,7 @@ import React from 'react'
 
 const Trail = () => {
   return (
-    <div>Trail</div>
+    <div>Trail page</div>
   )
 }
 

@@ -87,7 +87,7 @@ export const vehicleCardData = [
   },
   {
     title: "front content3",
-    description: <PieChart />,
+    description: [10,11,12,13,14,15,16,17],
   },
   {
     title: "front content4",

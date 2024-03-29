@@ -5,6 +5,7 @@ import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
 import { FilterData, vehicleCardData } from "../../data/FilterData";
 import { useDataHook } from "../../providers/AppDataProvider";
+import PieChart from "../../components/chartGraphs/PieChart";
 
 const VehicleDetails = () => {
 
@@ -152,7 +153,7 @@ const VehicleDetails = () => {
               <Card
                 key={index}
                 frontContent={item.title}
-                backContent={item?.description}
+                backContent={index === 3 ? <PieChart data={item[3]?.description}/>:item?.description}
                 color="00aa13"
               />
             );
