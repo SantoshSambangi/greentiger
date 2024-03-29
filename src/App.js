@@ -23,6 +23,7 @@ function App() {
           <Route path="*" element={<PageNotFound404 />} />
         </Routes>
       </DataProvider>
+      
     </div>
   );
 }

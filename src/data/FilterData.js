@@ -1,5 +1,6 @@
 import ExpChart from "../components/chartGraphs/ExpChart";
 import LineChart from "../components/chartGraphs/LineChart";
+import MapContainer from "../components/chartGraphs/Map";
 import PieChart from "../components/chartGraphs/PieChart";
 
 export const FilterData = [
@@ -91,11 +92,11 @@ export const vehicleCardData = [
   },
   {
     title: "front content4",
-    description: "back content4",
+    description: "Back content",
   },
   {
     title: "front content5",
-    description: "back content5",
+    description:<div style={{width:"100%"}} ><iframe title="GtMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.106148689855!2d77.61882247064747!3d12.900895488620042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15f3560fa331%3A0x5277f475d1d812f4!2sGreen%20Tiger%20Mobility%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1711692800986!5m2!1sen!2sin" width="100%" height="100%"  allowfullscreen="" contro loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>,
   },
   {
     title: "front content6",

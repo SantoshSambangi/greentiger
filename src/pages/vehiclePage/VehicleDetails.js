@@ -25,6 +25,8 @@ const VehicleDetails = () => {
     endDate: "",
   });
 
+
+
   console.log(date);
   
   const btnData = ["Vehicle Details", "Bms Details", "Vcu Details"];
@@ -153,7 +155,7 @@ const VehicleDetails = () => {
               <Card
                 key={index}
                 frontContent={item.title}
-                backContent={index === 3 ? <PieChart data={item[3]?.description}/>:item?.description}
+                backContent={index === 2 ? <PieChart data={item[2]?.description}/>:item?.description}
                 color="00aa13"
               />
             );
