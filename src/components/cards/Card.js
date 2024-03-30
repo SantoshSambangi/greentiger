@@ -25,7 +25,7 @@ const Card = (props) => {
         <div className="flip-card-front">
             {frontContent}
             <h2>{subTitle}</h2>
-            <p>{subTitleTwo}</p>
+            {subTitleTwo &&<p>{subTitleTwo}</p>}
         </div>
         <div className="flip-card-back">
             {isPieChart && (
