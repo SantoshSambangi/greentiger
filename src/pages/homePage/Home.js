@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/navBar/NavBar";
 import "../homePage/home.css";
+import GoogleMap from "../../components/chartGraphs/GoogleMap";
 
 const Home = () => {
   
