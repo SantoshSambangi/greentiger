@@ -1,7 +1,26 @@
+import BarChartOne from "../components/chartGraphs/BarChatOne";
 import ExpChart from "../components/chartGraphs/ExpChart";
 import LineChart from "../components/chartGraphs/LineChart";
-import MapContainer from "../components/chartGraphs/Map";
+
 import PieChart from "../components/chartGraphs/PieChart";
+
+const chartData = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+  datasets: [{
+      label: 'Sales',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [12, 19, 3, 5, 2, 3],
+  }]
+};
+
+const chartOptions = {
+  scales: {
+      y: {
+          beginAtZero: true
+      }
+  }
+};
 
 export const FilterData = [
   {
@@ -88,11 +107,11 @@ export const vehicleCardData = [
   },
   {
     title: "front content3",
-    description: [10,11,12,13,14,15,16,17],
+    description: <PieChart/>,
   },
   {
     title: "front content4",
-    description: "Back content",
+    description:<LineChart/>,
   },
   {
     title: "front content5",
@@ -100,7 +119,7 @@ export const vehicleCardData = [
   },
   {
     title: "front content6",
-    description: "back content6",
+    description: <BarChartOne data={chartData} options={chartOptions}/>,
   },
 ];
 

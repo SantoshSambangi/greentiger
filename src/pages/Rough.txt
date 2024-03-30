@@ -1,6 +1,8 @@
  //ctrl + shift + g its for git stged for all files
  //npm audit fix --force 
 
+ //{index === 2 ? <PieChart data={item[2]?.description}/>:item?.description}
+
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';

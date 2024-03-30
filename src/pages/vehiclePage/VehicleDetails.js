@@ -155,7 +155,7 @@ const VehicleDetails = () => {
               <Card
                 key={index}
                 frontContent={item.title}
-                backContent={index === 2 ? <PieChart data={item[2]?.description}/>:item?.description}
+                backContent={item.description}
                 color="00aa13"
               />
             );
