@@ -75,34 +75,6 @@ export const vehicleCardData = [
   {
       subTitle: "0",
       subTitleTwo: "Total Distance (Km)",
-      // description: [
-      //     {
-      //         labels: ["Jan", "Feb", "Mar", "Apr", "May"],
-      //         options: {
-      //             plugins: {
-      //                 legend: {
-      //                     position: "top",
-      //                 },
-      //                 title: {
-      //                     display: true,
-      //                     text: "Expense Tracker",
-      //                 },
-      //             },
-      //         },
-      //         datasets: [
-      //             {
-      //                 label: "2020 expenses",
-      //                 data: [10, 20, 30, 40, 50],
-      //                 backgroundColor: "pink",
-      //             },
-      //             {
-      //                 label: "2021 expenses",
-      //                 data: [40, 30, 50, 60, 80],
-      //                 backgroundColor: "green",
-      //             },
-      //         ],
-      //     },
-      // ],
       description: <ExpChart />,
   },
   {
