@@ -3,7 +3,7 @@ import "../cards/card.css";
 
 const Card = (props) => {
 
-  const {frontContent, backContent, color} = props;
+  const {frontContent, backContent, color, subTitle, subTitleTwo} = props;
     
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -22,6 +22,8 @@ const Card = (props) => {
       <div className="flip-card-inner">
         <div className="flip-card-front">
             {frontContent}
+            {subTitle}
+            {subTitleTwo}
         </div>
         <div className="flip-card-back">
             {backContent}

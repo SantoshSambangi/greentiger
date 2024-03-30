@@ -93,12 +93,9 @@ export const FilterData = [
 
 export const vehicleCardData = [
   {
-    title: (
-      <div>
-        <h1>0</h1>
-        <h3>Total Distance (Km)</h3>
-      </div>
-    ),
+    title: "front Content-1",
+    subTitle: "0",
+    subTitleTwo: "Total Distance (Km)",
     description: <ExpChart />,
   },
   {
