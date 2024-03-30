@@ -93,29 +93,33 @@ export const FilterData = [
 
 export const vehicleCardData = [
   {
-    title: "front Content-1",
-    subTitle: "0",
-    subTitleTwo: "Total Distance (Km)",
+    title: 0,
+    subTitle: "Total Distance (Km)",
     description: <ExpChart />,
   },
   {
     title: "front content2",
+    subTitle: "Total Distance (Km)",
     description: <LineChart />,
   },
   {
     title: "front content3",
+    subTitle: "Total Distance (Km)",
     description: <PieChart/>,
   },
   {
     title: "front content4",
+    subTitle: "Total Distance (Km)",
     description:<LineChart/>,
   },
   {
     title: "front content5",
+    subTitle: "Total Distance (Km)",
     description:<div style={{width:"100%"}} ><iframe title="GtMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.106148689855!2d77.61882247064747!3d12.900895488620042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15f3560fa331%3A0x5277f475d1d812f4!2sGreen%20Tiger%20Mobility%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1711692800986!5m2!1sen!2sin" width="100%" height="100%"  allowfullscreen="" contro loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>,
   },
   {
     title: "front content6",
+    subTitle: "Total Distance (Km)",
     description: <BarChartOne data={chartData} options={chartOptions}/>,
   },
 ];

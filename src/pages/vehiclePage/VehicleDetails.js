@@ -154,7 +154,8 @@ const VehicleDetails = () => {
             return (
               <Card
                 key={index}
-                frontContent={item.title}
+                title={item.title}
+                subTitle={item.subTitle}
                 backContent={item.description}
                 color="00aa13"
               />
