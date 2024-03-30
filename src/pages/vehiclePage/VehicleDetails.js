@@ -91,6 +91,12 @@ const VehicleDetails = () => {
     }
   };
 
+    const getNextDay = (dateString) => {
+        const date = new Date(dateString);
+        date.setDate(date.getDate() + 1);
+        return date.toISOString().split("T")[0];
+    };
+
   return (
     
     <div className="vcuContainer">
@@ -114,20 +120,39 @@ const VehicleDetails = () => {
             <h2>2</h2>
             <p>Vehicles</p>
           </div>
-
           <div className="dateRange">
-            <input
-              type="date"
-              placeholder="Select a date"
-              value={date.startDate}
-              onChange={(e) => setDate({ ...date, startDate: e.target.value })}
-            />
-            <input
-              type="date"
-              value={date.endDate}
-              onChange={(e) => setDate({ ...date, endDate: e.target.value })}
-            />
-          </div>
+                <input
+                    type="date"
+                    value={date.startDate || ""}
+                    onChange={(e) => {
+                    const selectedStartDate = e.target.value;
+                    const nextDay = new Date(selectedStartDate);
+                    nextDay.setDate(nextDay.getDate() + 1);
+                    const formattedNextDay = nextDay.toISOString().split("T")[0];
+                                setDate({
+                                    startDate: selectedStartDate,
+                                    endDate: formattedNextDay,
+                                });
+                            }}
+                            placeholder="Start Date"
+                        />
+
+                        <input
+                            type="date"
+                            value={date.endDate || ""}
+                            min={
+                                date.startDate ? getNextDay(date.startDate) : ""
+                            }
+                            onChange={(e) => {
+                                const selectedEndDate = e.target.value;
+                                const updatedEndDate =
+                                    selectedEndDate !== date.startDate
+                                        ? selectedEndDate
+                                        : "";
+                                setDate({ ...date, endDate: updatedEndDate });
+                            }}
+                            placeholder="End Date"/>
+            </div>
         </div>
       </div>
 

@@ -108,8 +108,9 @@ const Vcu = () => {
             return (
               <Card
                 key={index}
-                frontContent={item.title}
-                backContent={item?.description}
+                title={item.title}
+                subTitle={item.subTitle}
+                backContent={item.description}
                 color="red"
               />
             );

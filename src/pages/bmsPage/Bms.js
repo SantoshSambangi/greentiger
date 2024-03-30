@@ -137,8 +137,9 @@ const Bms = () => {
             return (
               <Card
                 key={index}
-                frontContent={item.title}
-                backContent={item?.description}
+                title={item.title}
+                subTitle={item.subTitle}
+                backContent={item.description}
                 color="#0e1a77"
                 // color={colors[colorIndex]}
               />

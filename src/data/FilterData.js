@@ -1,26 +1,7 @@
-import BarChartOne from "../components/chartGraphs/BarChatOne";
+import BarChartOne from "../components/chartGraphs/BarChartOne";
 import ExpChart from "../components/chartGraphs/ExpChart";
 import LineChart from "../components/chartGraphs/LineChart";
-
 import PieChart from "../components/chartGraphs/PieChart";
-
-const chartData = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-  datasets: [{
-      label: 'Sales',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [12, 19, 3, 5, 2, 3],
-  }]
-};
-
-const chartOptions = {
-  scales: {
-      y: {
-          beginAtZero: true
-      }
-  }
-};
 
 export const FilterData = [
   {
@@ -98,90 +79,95 @@ export const vehicleCardData = [
     description: <ExpChart />,
   },
   {
-    title: "front content2",
-    subTitle: "Total Distance (Km)",
-    description: <LineChart />,
+    title: 0 ,
+    subTitle: "Carbon Savings",
+    description: <PieChart />,
   },
   {
-    title: "front content3",
-    subTitle: "Total Distance (Km)",
-    description: <PieChart/>,
+    title: 0,
+    subTitle: "Cost Saving",
+    description: <BarChartOne/>,
   },
   {
-    title: "front content4",
-    subTitle: "Total Distance (Km)",
-    description:<LineChart/>,
+    title:"-" ,
+    subTitle: "Ride Score",
+    description:<PieChart/>,
   },
   {
-    title: "front content5",
-    subTitle: "Total Distance (Km)",
+    title: 0 ,
+    subTitle: "Current Location",
     description:<div style={{width:"100%"}} ><iframe title="GtMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.106148689855!2d77.61882247064747!3d12.900895488620042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15f3560fa331%3A0x5277f475d1d812f4!2sGreen%20Tiger%20Mobility%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1711692800986!5m2!1sen!2sin" width="100%" height="100%"  allowfullscreen="" contro loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>,
   },
   {
-    title: "front content6",
-    subTitle: "Total Distance (Km)",
-    description: <BarChartOne data={chartData} options={chartOptions}/>,
+    title: "-",
+    subTitle: "Vehicle Score",
+    description: <PieChart/> ,
   },
 ];
 
+
 export const bmsCardData = [
   {
-    title: <div>
-    <h1>0.0</h1>
-    <h3>Average Cell temperature (&deg;c)</h3>
-  </div>,
-    description: <ExpChart/>,
+    title: 0,
+    subTitle: "Avg Cell temp (c)",
+    description: "LineChart will come heare",
   },
   {
-    title: "front content2",
-    description: "back content2",
+    title: 0,
+    subTitle: "Avg BMS temp",
+    description: "LineChart will come heare",
   },
   {
-    title: "front content3",
-    description: "back content3",
+    title: 0,
+    subTitle: "Avg Discharge Current",
+    description:"LineChart will come heare",
   },
   {
-    title: "front content4",
-    description: "back content4",
+    title: 0,
+    subTitle: "Temp ans Voltage faults",
+    description:"LineChart will come heare",
   },
   {
-    title: "front content5",
-    description: "back content5",
+    title: 0,
+    subTitle: "Cycle",
+    description:"LineChart will come heare",
   },
   {
-    title: "front content6",
-    description: "back content6",
+    title: 0,
+    subTitle:  "BMS Failures",
+    description: <BarChartOne/>,
   },
 ];
 
 export const vcuCardData = [
   {
-    title: (
-      <div>
-        <h1>0.0</h1>
-        <h3>Average Motor temperature (&deg;c)</h3>
-      </div>
-    ),
-    description: "vcu backcontent2",
+    title: 0,
+    subTitle:"Avg Motor temp",
+    description:"LineChart will come heare",
   },
   {
-    title: "front content2",
-    description: "back content2",
+    title: 0,
+    subTitle: "Avg Controller temp",
+    description: "LineChart will come heare",
   },
   {
-    title: "front content3",
-    description: "back content3",
+    title: 0,
+    subTitle: "Motor Controller Faults",
+    description: <PieChart/>,
   },
   {
-    title: "front content4",
-    description: "back content4",
+    title: 0,
+    subTitle: "Iot Devices",
+    description:"LineChart will come heare",
   },
   {
-    title: "front content5",
-    description: "back content5",
+    title: 0,
+    subTitle: "Valid Data Packets",
+    description:"LineChart will come heare",
   },
   {
-    title: "front content6",
-    description: "back content6",
+    title: 0,
+    subTitle:  "TBC",
+    description: <BarChartOne/>,
   },
 ];

@@ -45,7 +45,7 @@
   margin: auto;
 } */
 
-.flip-card-front > h2, p{
+.flip-card-front {
   color: white;
   display: flex;
   flex-direction: column;

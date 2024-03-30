@@ -21,7 +21,7 @@ const Card = (props) => {
     <div style={{ backgroundColor: color }} className={`flip-card ${isFlipped ? "flipped" : ""}`} onMouseLeave={notFlipped} onMouseEnter={handleFlip} >
       <div className="flip-card-inner">
         <div className="flip-card-front">
-            <h2>{title}</h2>
+            <h1>{title}</h1>
             <p>{subTitle}</p>
         </div>
         <div className="flip-card-back">
