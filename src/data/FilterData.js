@@ -73,8 +73,8 @@ export const FilterData = [
 
 export const vehicleCardData = [
   {
-      title:[{subTitle: "0",
-              subTitleTwo:"Total Distance (Km)" }],
+      subTitle: "0",
+      subTitleTwo: "Total Distance (Km)",
       // description: [
       //     {
       //         labels: ["Jan", "Feb", "Mar", "Apr", "May"],

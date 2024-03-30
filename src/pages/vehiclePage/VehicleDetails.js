@@ -167,8 +167,8 @@ const VehicleDetails = () => {
                             <Card
                                 key={index}
                                 frontContent={item.title}
-                                // subTitleTwo={title.subTitleTwo}
-                                subTitle={item[0]?.title?.map((name) => name)}
+                                subTitleTwo={item.subTitleTwo}
+                                subTitle={item.subTitle}
                                 backContent={item?.description}
                                 color="00aa13"
                                 isPieChart={
