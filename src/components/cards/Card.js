@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import "../cards/card.css";
+import LineChart from '../chartGraphs/LineChart';
+import PieChart from '../chartGraphs/PieChart';
 
 const Card = (props) => {
 
-  const {frontContent, backContent, color} = props;
+  const {frontContent, backContent, color, isPieChart, isLineChart, subTitle,subTitleTwo} = props;
     
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -22,9 +24,45 @@ const Card = (props) => {
       <div className="flip-card-inner">
         <div className="flip-card-front">
             {frontContent}
+            <h2>{subTitle}</h2>
+            <p>{subTitleTwo}</p>
         </div>
         <div className="flip-card-back">
-            {backContent}
+            {isPieChart && (
+                        <PieChart
+                            chartData={backContent}
+                            chartLabels={[
+                                "Label 1",
+                                "Label 2",
+                                "Label 3",
+                                "Label 4",
+                                "Label 5",
+                            ]}
+                            chartBackgroundColor={[
+                                "#FF6384",
+                                "#36A2EB",
+                                "#FFCE56",
+                                "#4BC0C0",
+                                "#9966FF",
+                            ]}
+                            hoverOffset={4}
+                        />
+                    )}
+                    {isLineChart && (
+                        <LineChart
+                            chartData={backContent}
+                            chartLabels={[
+                                "Label 1",
+                                "Label 2",
+                                "Label 3",
+                                "Label 4",
+                                "Label 5",
+                                "Label 6",
+                            ]}
+                            lineColor="blue"
+                        />
+                    )}
+                    {!isPieChart && !isLineChart && backContent}
         </div>
       </div>
     </div>

@@ -73,33 +73,57 @@ export const FilterData = [
 
 export const vehicleCardData = [
   {
-    title: (
-      <div>
-        <h1>0</h1>
-        <h3>Total Distance (Km)</h3>
-      </div>
-    ),
-    description: <ExpChart />,
+      title:[{subTitle: "0",
+              subTitleTwo:"Total Distance (Km)" }],
+      // description: [
+      //     {
+      //         labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+      //         options: {
+      //             plugins: {
+      //                 legend: {
+      //                     position: "top",
+      //                 },
+      //                 title: {
+      //                     display: true,
+      //                     text: "Expense Tracker",
+      //                 },
+      //             },
+      //         },
+      //         datasets: [
+      //             {
+      //                 label: "2020 expenses",
+      //                 data: [10, 20, 30, 40, 50],
+      //                 backgroundColor: "pink",
+      //             },
+      //             {
+      //                 label: "2021 expenses",
+      //                 data: [40, 30, 50, 60, 80],
+      //                 backgroundColor: "green",
+      //             },
+      //         ],
+      //     },
+      // ],
+      description: <ExpChart />,
   },
   {
-    title: "front content2",
-    description: <LineChart />,
+      title: "front content2",
+      description: [44, 66, 78, 99, 57, 98],
   },
   {
-    title: "front content3",
-    description: <PieChart />,
+      title: "front content3",
+      description: [10, 20, 30, 40, 50],
   },
   {
-    title: "front content4",
-    description: "back content4",
+      title: "front content4",
+      description: "back content4",
   },
   {
-    title: "front content5",
-    description: "back content5",
+      title: "front content5",
+      description: "back content5",
   },
   {
-    title: "front content6",
-    description: "back content6",
+      title: "front content6",
+      description: "back content6",
   },
 ];
 
