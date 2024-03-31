@@ -135,7 +135,7 @@ export const bmsCardData = [
   {
     title: 0,
     subTitle:  "BMS Failures",
-    description: <BarChartOne/>,
+    description: <BarChartOne />,
   },
 ];
 
