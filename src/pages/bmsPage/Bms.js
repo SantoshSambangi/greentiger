@@ -154,10 +154,10 @@ const Bms = () => {
               subTitle={item.subTitle}
               backContent={item?.description}
               color="#0e1a77"
-              isBarChart={
-                  index === 0 &&
-                  Array.isArray(item.description)
-              }
+              // isBarChart={
+              //     index === 0 &&
+              //     Array.isArray(item.description)
+              // }
               isLineChart={
                   index === 0 || index ===1 || index ===2 || index ===3 &&
                   Array.isArray(item.description)
