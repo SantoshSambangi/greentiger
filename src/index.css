@@ -31,3 +31,13 @@
 :where(.css-dev-only-do-not-override-42nv3w).ant-picker-dropdown .ant-picker-header >button{
   color: red;
 }
+
+/* canvas{
+  width: 300px !important;
+  height: 200px !important;
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+} */

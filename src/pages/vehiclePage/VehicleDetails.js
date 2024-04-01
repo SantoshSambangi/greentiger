@@ -170,17 +170,17 @@ const VehicleDetails = () => {
                                 subTitle={item.subTitle}
                                 backContent={item?.description}
                                 color="00aa13"
-                                isBarChart={
-                                    index === 0 &&
-                                    Array.isArray(item.description)
-                                }
-                                isLineChart={
-                                    index === 1 &&
-                                    Array.isArray(item.description)
-                                }
+                                // isBarChart={
+                                //     index === 0 &&
+                                //     Array.isArray(item.description)
+                                // }
+                                // isLineChart={
+                                //     index === 1 &&
+                                //     Array.isArray(item.description)
+                                // }
                                 isPieChart={
+                                    index === 1 ||
                                     index === 2 ||
-                                    index === 3 ||
                                     (index === 5 &&
                                         Array.isArray(item.description))
                                 }

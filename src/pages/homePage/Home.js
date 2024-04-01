@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "../../components/navBar/NavBar";
 import "../homePage/home.css";
 import DatePickerAntD from "../../components/dateRangePicker/DatePickerAntD";
+import MapComponent from "../../components/chartGraphs/Map";
 
 const Home = () => {
   
@@ -38,6 +39,7 @@ const Home = () => {
             <h1>Green Tiger Dashboard</h1>
         </div>
         <DatePickerAntD/>
+        <MapComponent/>
         {/* <iframe className="bi-embedded" title="Report Section" 
         width="100vw" height="80vh" src ={data}  allowFullScreen="true"></iframe> */}
       </div>

@@ -71,7 +71,8 @@ export const vehicleCardData = [
   {
       title: 0,
       subTitle: "Total Distance (Km)",
-      description: [10, 20, 30, 40, 50, 60, 70],
+      // description: [10, 20, 30, 40, 50, 60, 70],
+      description: "Content",
   },
   {
       title: 0,
@@ -87,6 +88,7 @@ export const vehicleCardData = [
       title: "4",
       subTitle: "Ride Score",
       description: [250, 660, 850, 630, 259],
+      description: "Content",
   },
   {
       title: 5,
