@@ -107,11 +107,25 @@ const Vcu = () => {
           {vcuCardData?.map((item, index) => {
             return (
               <Card
-                key={index}
-                title={item.title}
-                subTitle={item.subTitle}
-                backContent={item.description}
-                color="red"
+              key={index}
+              title={item.title}
+              subTitle={item.subTitle}
+              backContent={item?.description}
+              color="red"
+              isBarChart={
+                  index === 3 &&
+                  Array.isArray(item.description)
+              }
+              isLineChart={
+                  index === 0 || index ===1 || index ===2 &&
+                  Array.isArray(item.description)
+              }
+              // isPieChart={
+              //     index === 1 ||
+              //     index === 2 ||
+              //     index === 5 &&
+              //         (Array.isArray(item.description))
+              // }
               />
             );
           })}

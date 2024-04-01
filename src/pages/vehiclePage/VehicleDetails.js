@@ -86,7 +86,7 @@ const VehicleDetails = () => {
     if (!item) return;
     const fieldToUpdate = item.name;
 
-    if (fieldToUpdate === "state" || fieldToUpdate === "locality") {
+    if (fieldToUpdate === "state" || fieldToUpdate === "locality" || fieldToUpdate === "deviceId") {
         setFilterBmsData((prevData) => ({ ...prevData, [fieldToUpdate]: "" }));
     }
   };
@@ -121,7 +121,7 @@ const VehicleDetails = () => {
             <p>Vehicles</p>
           </div>
           <div className="dateRange">
-                <input
+          <input
                     type="date"
                     value={date.startDate || ""}
                     onChange={(e) => {
@@ -134,8 +134,7 @@ const VehicleDetails = () => {
                                     endDate: formattedNextDay,
                                 });
                             }}
-                            placeholder="Start Date"
-                        />
+                            placeholder="Start Date"/>
 
                         <input
                             type="date"
@@ -150,9 +149,8 @@ const VehicleDetails = () => {
                                         ? selectedEndDate
                                         : "";
                                 setDate({ ...date, endDate: updatedEndDate });
-                            }}
-                            placeholder="End Date"/>
-            </div>
+                            }}placeholder="End Date"/>
+          </div>
         </div>
       </div>
 
@@ -178,12 +176,25 @@ const VehicleDetails = () => {
           {vehicleCardData?.map((item, index) => {
             return (
               <Card
-                key={index}
-                title={item.title}
-                subTitle={item.subTitle}
-                backContent={item.description}
-                color="00aa13"
-              />
+              key={index}
+              title={item.title}
+              subTitle={item.subTitle}
+              backContent={item?.description}
+              color="00aa13"
+              isBarChart={
+                  index === 3 &&
+                  Array.isArray(item.description)
+              }
+              // isLineChart={
+              //     index === 1 &&
+              //     Array.isArray(item.description)
+              // }
+              isPieChart={
+                  index === 1 ||
+                  index === 2 ||
+                  index === 5 &&
+                      (Array.isArray(item.description))
+              }/>
             );
           })}
         </div>

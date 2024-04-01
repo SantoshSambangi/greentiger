@@ -132,7 +132,7 @@ const Bms = () => {
 
       <div className="bmsCardMainContainer">
         <div className="bmsCardContainer">
-          {bmsCardData?.map((item, index) => {
+          {/* {bmsCardData?.map((item, index) => {
             // const colorIndex = index % colors.length;
             return (
               <Card
@@ -144,6 +144,32 @@ const Bms = () => {
                 // color={colors[colorIndex]}
               />
             );
+          })} */}
+
+{bmsCardData?.map((item, index) => {
+            return (
+              <Card
+              key={index}
+              title={item.title}
+              subTitle={item.subTitle}
+              backContent={item?.description}
+              color="#0e1a77"
+              isBarChart={
+                  index === 0 &&
+                  Array.isArray(item.description)
+              }
+              isLineChart={
+                  index === 0 || index ===1 || index ===2 || index ===3 &&
+                  Array.isArray(item.description)
+              }
+              // isPieChart={
+              //     index === 1 ||
+              //     index === 2 ||
+              //     index === 5 &&
+              //         (Array.isArray(item.description))
+              // }
+              />
+            );
           })}
         </div>
 
@@ -153,8 +179,7 @@ const Bms = () => {
             {
               btnData.map((item, index) =>{
                 return <button key={index} className={location.pathname === "/bms" && item  === "Bms Details" ? "bmsBtn" : "inActiveBtn"}
-                onClick={()=> handleBtn(item)}
-                >{item}</button>
+                onClick={()=> handleBtn(item)}>{item}</button>
               })
             }
         </div>
