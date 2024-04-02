@@ -1,40 +1,3 @@
-// import React, { useState } from 'react';
-// import "../cards/card.css";
-
-// const Card = (props) => {
-
-//     const {title, backContent, color, subTitle,} = props;
-    
-//   const [isFlipped, setIsFlipped] = useState(false);
-
-//   const handleFlip = () => {
-//     setIsFlipped(!isFlipped);
-//   };
-
-//   const notFlipped = () => {
-//     setIsFlipped(false)
-//   }
-
-//   // className={classNames(btnStyles, styles.btnStyles)}
-
-//   return (
-//     <div style={{ backgroundColor: color }} className={`flip-card ${isFlipped ? "flipped" : ""}`} onMouseLeave={notFlipped} onMouseEnter={handleFlip} >
-//       <div className="flip-card-inner">
-//         <div className="flip-card-front">
-//             <h1>{title}</h1>
-//             <p>{subTitle}</p>
-//         </div>
-//         <div className="flip-card-back">
-//             {backContent}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Card;
-
-
 import React, { useState } from "react";
 import "../cards/card.css";
 import LineChart from "../chartGraphs/LineChart";
@@ -51,9 +14,11 @@ const Card = (props) => {
         isBarChart,
         title,
         subTitle,
+        chartLabels
     } = props;
 
     const [isFlipped, setIsFlipped] = useState(false);
+    
 
     const handleFlip = () => {
         setIsFlipped(!isFlipped);
@@ -76,13 +41,14 @@ const Card = (props) => {
                     {isPieChart && (
                         <PieChart
                             chartData={backContent}
-                            chartLabels={[
-                                "Label 1",
-                                "Label 2",
-                                "Label 3",
-                                "Label 4",
-                                "Label 5",
-                            ]}
+                            // chartLabels={[
+                            //     "Label 1",
+                            //     "Label 2",
+                            //     "Label 3",
+                            //     "Label 4",
+                            //     "Label 5",
+                            // ]}
+                            chartLabels={chartLabels}
                             chartBackgroundColor={[
                                 "#FF6384",
                                 "#36A2EB",
