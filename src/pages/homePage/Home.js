@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/navBar/NavBar";
 import "../homePage/home.css";
-import GoogleMap from "../../components/chartGraphs/GoogleMap";
+import MapMarker from "../../components/chartGraphs/MapMarker";
+// import MyPieChart from "../vehiclePage/MyPieChart";
+// import GoogleMapTracker from "../../components/chartGraphs/Map";
 
 const Home = () => {
   
@@ -14,6 +16,15 @@ const Home = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const [latitude, setlatitude] = useState("")
+  const [longitude, setlongitude] = useState("")
+  useEffect(()=>{
+      navigator.geolocation.getCurrentPosition((position) => {
+        setlatitude(position.coords.latitude)
+        setlongitude(position.coords.longitude)
+      })
+  },[])
 
   function fetchData() {
     fetch(`${apiUrl}/analytics/v1/get/${userId}`).then((results) => {
@@ -37,7 +48,13 @@ const Home = () => {
         <div className="gtTitle">
             <h1>Green Tiger Dashboard</h1>
         </div>
-        
+
+        {/* <GoogleMapTracker/> */}
+
+        <MapMarker/>
+
+        {/* <MyPieChart/> */}
+
         {/* <iframe className="bi-embedded" title="Report Section" 
         width="100vw" height="80vh" src ={data}  allowFullScreen="true"></iframe> */}
       </div>
