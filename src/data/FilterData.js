@@ -1,4 +1,4 @@
-import BarChartOne from "../components/chartGraphs/BarChartOne";
+// import BarChartOne from "../components/chartGraphs/BarChartOne";
 
 export const FilterData = [
   {
@@ -80,7 +80,7 @@ export const vehicleCardData = [
   {
       title: 0,
       subTitle: "Carbon Savings",
-      description: [35, 45, 65, 75, 85,65],
+      description: [35, 45, 65, 15, 85,65],
       labels: ["Low Emission", "Medium Emission", "High Emission","Very High Emission","High Emission"],
       // colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
   },

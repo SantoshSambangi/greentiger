@@ -17,6 +17,7 @@ const VehicleDetails = () => {
         startDate: "",
         endDate: "",
     });
+    console.log(date)
 
     const btnData = ["Vehicle Details", "Bms Details", "Vcu Details"];
 
@@ -42,6 +43,8 @@ const VehicleDetails = () => {
         gender: "",
         profession: "",
     });
+
+    console.log(filterBmsData)
 
     const handleClearFilters = (filterCategory) => {
         setFilterBmsData((prevData) => {
@@ -166,6 +169,7 @@ const VehicleDetails = () => {
                             />
                         );
                     })}
+                    
                 </div>
 
                 {/* Button container */}
