@@ -1,16 +1,17 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 
-const LineChart = ({ chartData, chartLabels, lineColor }) => {
+const LineChart = (props) => {
+    const { lineChartData, lineChartLabels, lineChartColor } = props;
     const data = {
-        labels: chartLabels,
+        labels: lineChartLabels,
         datasets: [
             {
-                label: "Line Chart",
-                data: chartData,
-                fill: false,
-                borderColor: lineColor || "rgb(75, 192, 192)",
-                tension: 0.1,
+                label: "Line-Chart",
+                data: lineChartData,
+                fill: true,
+                borderColor: lineChartColor || "blue",
+                tension: 0.4,
             },
         ],
     };

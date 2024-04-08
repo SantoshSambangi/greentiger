@@ -1,9 +1,4 @@
 import BarChartOne from "../components/chartGraphs/BarChartOne";
-import LocationMap from "../components/chartGraphs/LocationMap";
-import MyLineChart from "../components/chartGraphs/MyLineChart";
-import MyPieChart from "../components/chartGraphs/MyPieChart";
-// import MyGoogleMap from "../components/chartGraphs/GoogleMap";
-// import MapMarker from "../components/chartGraphs/MapMarker";
 
 export const FilterData = [
   {
@@ -78,15 +73,16 @@ export const vehicleCardData = [
   {
       title: 0,
       subTitle: "Total Distance (Km)",
-      // description: [10, 20, 30, 40, 50, 60, 70],
-      description: <LocationMap latitude={12.97675} longitude={77.57528} />,
+      description: [10, 50, 10, 40, 20, 80],
+      labels :["sun","mon","tue","wed","thu","fri"],
+      // colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
   },
   {
       title: 0,
       subTitle: "Carbon Savings",
-      description: [35, 45, 65, 75, 85],
-      labels: ["Low Emission", "Medium Emission", "High Emission","Very High Emission"],
-      colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
+      description: [35, 45, 65, 75, 85,65],
+      labels: ["Low Emission", "Medium Emission", "High Emission","Very High Emission","High Emission"],
+      // colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
   },
   {
       title: 0,
@@ -105,7 +101,7 @@ export const vehicleCardData = [
   {
       title: 5,
       subTitle: "Current Location",
-      description: <LocationMap latitude={12.97675} longitude={77.57528}/>
+      // description: <LocationMap />
   },
   {
       title: "6",
@@ -119,36 +115,47 @@ export const vehicleCardData = [
 
 export const bmsCardData = [
   {
-    title: 0,
-    subTitle: "Avg Cell temp (c)",
-    description: [35, 45, 65, 75, 85,65],
+      title: 0,
+      subTitle: "Total Distance (Km)",
+      description: [10, 50, 10, 40, 20, 80],
+      labels :["sun","mon","tue","wed","thu","fri"],
+      // colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
   },
   {
-    title: 0,
-    subTitle: "Avg BMS temp",
-    description: [340, 540, 670, 455, 788,345],
+      title: 0,
+      subTitle: "Carbon Savings",
+      description: [35, 45, 65, 75, 85,65],
+      labels: ["Low Emission", "Medium Emission", "High Emission","Very High Emission","High Emission"],
+      // colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
   },
   {
-    title: 0,
-    subTitle: "Avg Discharge Current",
-    description: [250, 660, 850, 630, 259,350],
+      title: 0,
+      subTitle: "Cost Saving",
+      description: [89, 79, 69, 59, 49],
+      labels: ["Savings1", "Savings2", "Savings3", "Savings4", "Savings5"],
+      colors: ["#ffa500", "#008000", "#0000ff", "#800080"],
   },
   {
-    title: 0,
-    subTitle: "Temp ans Voltage faults",
-    description:[89, 79, 69, 59, 49,60],
+      title: "4",
+      subTitle: "Ride Score",
+      description: [250, 660, 850, 630, 259],
+      labels: ["Excellent", "Good", "Average", "Poor","A++"],
+      colors: ["#ff0000", "#ffa500", "#ffff00", "#008000","#ff0000"],
   },
   {
-    title: 0,
-    subTitle: "Cycle",
-    description:"content",
+      title: 5,
+      subTitle: "Current Location",
+      description: "Back content"
   },
   {
-    title: 0,
-    subTitle:  "BMS Failures",
-    description: <BarChartOne />,
+      title: "6",
+      subTitle: "Vehicle Score",
+      description: [250, 660, 850, 630, 259],
+      labels: ["Grade A", "Grade B", "Grade C", "Grade D"],
+      colors: ["#ff4500", "#ffd700", "#7cfc00", "#00ffff"],
   },
 ];
+
 
 export const vcuCardData = [
   {
@@ -179,6 +186,6 @@ export const vcuCardData = [
   {
     title: 0,
     subTitle:  "TBC",
-    description: <BarChartOne/>,
+    description:"LineChart will come heare" ,
   },
 ];

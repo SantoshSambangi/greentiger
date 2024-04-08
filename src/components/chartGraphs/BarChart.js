@@ -42,14 +42,15 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart } from "chart.js/auto"
 
-const BarChart = ({ chartData, chartLabels, barColor }) => {
+const BarChart = (props) => {
+    const { barChartData, barChartLabels, barChartColor } = props;
     const data = {
-        labels: chartLabels,
+        labels: barChartLabels,
         datasets: [
             {
                 label: "Bar Chart",
-                data: chartData,
-                backgroundColor: barColor || "rgb(75, 192, 192)",
+                data: barChartData,
+                backgroundColor: barChartColor || "rgb(75, 192, 192)",
                 borderWidth: 1,
             },
         ],

@@ -11,7 +11,7 @@ const VehicleDetails = () => {
 
     const location = useLocation();
 
-    const data = useDataHook();
+    // const data = useDataHook();
 
     const [date, setDate] = useState({
         startDate: "",
@@ -147,28 +147,22 @@ const VehicleDetails = () => {
                                 key={index}
                                 title={item.title}
                                 subTitle={item.subTitle}
-                                backContent={item?.description}
-                                color="00aa13"
-                                isBarChart={
-                                    index === 0 &&
-                                    Array.isArray(item.description)
-                                }
-                                isLineChart={
-                                    index === 1 &&
-                                    Array.isArray(item.description)
-                                }
+                                color="#00aa13"
+                                // chartData={item.description} 
                                 isPieChart={
-                                    index === 2 ||
-                                    index === 3 ||
-                                    index === 5 &&
-                                        Array.isArray(item.description)
+                                    (index === 2 || index === 3 || index === 5) ? true : false                                 }
+                                isLineChart={
+                                    (index === 0 || index === 1) ? true : false 
                                 }
-                                lineChartLabels={item.labels}
-                                lineColor={item.colors}
-                                pieChartLabels={item.labels}
-                                pieChartColors={item.colors}
-                                barChartLabels={item.colors}
-                                barChartTitles={item.labels}
+                                isGoogleMap={
+                                    (index === 4) ? true : false
+                                }
+                                pieChartData={Array.isArray(item.description) ? item.description : null} 
+                                pieChartLabels={Array.isArray(item.labels) ? item.labels : null}
+                                pieChartBackgroundColor={Array.isArray(item.colors) ? item.colors : null}
+                                lineChartData={Array.isArray(item.description) ? item.description : null} 
+                                lineChartLabels={Array.isArray(item.labels) ? item.labels : null}
+                                lineChartColor={Array.isArray(item.colors) ? item.colors[0] : null}
                             />
                         );
                     })}
@@ -191,6 +185,7 @@ const VehicleDetails = () => {
                                 {item}
                             </button>
                         );
+                        
                     })}
                 </div>
             </div>

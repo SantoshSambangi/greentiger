@@ -1,5 +1,10 @@
 import React from 'react';
 import BarChart from './BarChart';
+// import { Chart } from "chart.js/auto";
+import { Chart, LinearScale, CategoryScale, BarElement, legend, Title, Tooltip, Legend } from 'chart.js';
+Chart.register(
+    LinearScale,CategoryScale,BarElement,Legend,Title,Tooltip
+)
 
 const BarChartOne = () => {
     const chartData = {

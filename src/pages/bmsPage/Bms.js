@@ -30,6 +30,7 @@ const Bms = () => {
     profession: "",
   });
 
+
   // console.log("filterdata", filterBmsData);
 
   // console.log(date);
@@ -132,45 +133,37 @@ const Bms = () => {
 
       <div className="bmsCardMainContainer">
         <div className="bmsCardContainer">
-          {/* {bmsCardData?.map((item, index) => {
-            // const colorIndex = index % colors.length;
-            return (
-              <Card
-                key={index}
-                title={item.title}
-                subTitle={item.subTitle}
-                backContent={item.description}
-                color="#0e1a77"
-                // color={colors[colorIndex]}
-              />
-            );
-          })} */}
-
-{bmsCardData?.map((item, index) => {
-            return (
-              <Card
-              key={index}
-              title={item.title}
-              subTitle={item.subTitle}
-              backContent={item?.description}
-              color="#0e1a77"
-              // isBarChart={
-              //     index === 0 &&
-              //     Array.isArray(item.description)
-              // }
-              isLineChart={
-                  index === 0 || index ===1 || index ===2 || index ===3 &&
-                  Array.isArray(item.description)
-              }
-              // isPieChart={
-              //     index === 1 ||
-              //     index === 2 ||
-              //     index === 5 &&
-              //         (Array.isArray(item.description))
-              // }
-              />
-            );
-          })}
+        {bmsCardData?.map((item, index) => {
+                        return (
+                            <Card
+                                key={index}
+                                title={item.title}
+                                subTitle={item.subTitle}
+                                color="#0e1a77"
+                                chartData={item?.description}
+                                isPieChart={
+                                  index === 2 ||
+                                  index === 3 ||
+                                  index === 5 &&
+                                  Array.isArray(item.description)
+                                }
+                                isLineChart={
+                                  index === 0 || index === 1 &&
+                                  Array.isArray(item.description)
+                                }
+                                lineChartLabels={item.labels}
+                                isBarChart={
+                                  index === 0 &&
+                                  Array.isArray(item.description)
+                                }
+                                lineColor={item.colors}
+                                pieChartLabels={item.labels}
+                                pieChartColors={item.colors}
+                                barChartLabels={item.colors}
+                                barChartTitles={item.labels}
+                            />
+                        );
+                    })}
         </div>
 
         {/* Button container */}

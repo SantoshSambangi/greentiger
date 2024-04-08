@@ -1,11 +1,63 @@
  //ctrl + shift + g its for git stged for all files
  //npm audit fix --force 
+  // description: <LocationMap latitude={12.97675} longitude={77.57528} />,
+
+//Bms card
+
+{bmsCardData?.map((item, index) => {
+            return (
+              <Card
+              key={index}
+              title={item.title}
+              subTitle={item.subTitle}
+              backContent={item?.description}
+              color="#0e1a77"
+              // isBarChart={
+              //     index === 0 &&
+              //     Array.isArray(item.description)
+              // }
+              isLineChart={
+                  index === 0 || index ===1 || index ===2 || index ===3 &&
+                  Array.isArray(item.description)
+              }
+              // isPieChart={
+              //     index === 1 ||
+              //     index === 2 ||
+              //     index === 5 &&
+              //         (Array.isArray(item.description))
+              // }
+              />
+            );
+          })}
 
  //{index === 2 ? <PieChart data={item[2]?.description}/>:item?.description}
 
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+
+{vehicleCardData?.map((item, index) => {
+    const isLineChart = (index === 0 || index === 1) && Array.isArray(item.description);
+    const isPieChart = (index === 2 || index === 3 || index === 5) && Array.isArray(item.description);
+
+    return (
+        <Card
+            key={index}
+            title={item.title}
+            subTitle={item.subTitle}
+            color="00aa13"
+            chartData={item?.description}
+            isLineChart={isLineChart}
+            isPieChart={isPieChart}
+            lineChartLabels={item.labels}
+            lineColor={item.colors}
+            pieChartLabels={item.labels}
+            pieChartColors={item.colors}
+        />
+    );
+})}
+
+
 
 const DateRangePicker = () => {
   const [startDate, setStartDate] = useState(null);
@@ -1060,3 +1112,205 @@ export default EmailAuthentication;
 // };
 
 // export default VehicleDetails;
+
+//filter box
+import React, { useState } from "react";
+import "../filterBox/filterBox.css";
+import { VscSearch } from "react-icons/vsc";
+import { CiEraser } from "react-icons/ci";
+
+const FilterBox = (props) => {
+    const { title, options, filterBmsData, setFilterBmsData, eraseAll } = props;
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const handleCheckboxChange = (optionValue, name) => {
+        setFilterBmsData((prevData) => {
+            const updatedData = { ...prevData };
+            const currentValue = updatedData[name] || [];
+            if (currentValue.includes(optionValue)) {
+                updatedData[name] = currentValue.filter(
+                    (value) => value !== optionValue
+                );
+            } else {
+                updatedData[name] = [...currentValue, optionValue];
+            }
+            return updatedData;
+        });
+    };
+
+    const filteredOptions = options.filter((option) =>
+        option.label.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    return (
+        <div className="filterBox">
+            <div className="filterTitle">
+                <span className="">{title}</span>
+                <span onClick={eraseAll}>
+                    <CiEraser />
+                </span>
+            </div>
+
+            <div className="filterSearch">
+                <VscSearch size={20} />
+                <input
+                    type="text"
+                    size="10"
+                    placeholder="Search.."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+            </div>
+
+            {filteredOptions.map((option) => (
+                <div key={option.value} className="filterCheck">
+                    <input
+                        type="checkbox"
+                        value={option.value}
+                        checked={filterBmsData[title.toLowerCase()]?.includes(
+                            option.value
+                        )}
+                        onChange={() =>
+                            handleCheckboxChange(
+                                option.value,
+                                title.toLowerCase()
+                            )
+                        }
+                    />
+                    <label>{option.label}</label>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default FilterBox;
+
+//Card.js files
+
+import React, { useState } from "react";
+import "../cards/card.css";
+import LineChart from "../chartGraphs/LineChart";
+import PieChart from "../chartGraphs/PieChart";
+import BarChart from "../chartGraphs/BarChart";
+// import BarChart from "../chartGraphs/BarChartNew";
+
+const Card = (props) => {
+    const {
+        backContent,
+        color,
+        isPieChart,
+        isLineChart,
+        isBarChart,
+        title,
+        subTitle,
+        chartLabels
+    } = props;
+
+    const [isFlipped, setIsFlipped] = useState(false);
+    
+
+    const handleFlip = () => {
+        setIsFlipped(!isFlipped);
+    };
+
+    const notFlipped = () => {
+        setIsFlipped(false);
+    };
+
+    return (
+        <div
+            style={{ backgroundColor: color }}
+            className={`flip-card ${isFlipped ? "flipped" : ""}`} onMouseLeave={notFlipped} onMouseEnter={handleFlip}>
+            <div className="flip-card-inner">
+                <div className="flip-card-front">
+                    <h1>{title}</h1>
+                    <p>{subTitle}</p>
+                </div>
+                <div className="flip-card-back">
+                    {isPieChart && (
+                        <PieChart
+                            chartData={backContent}
+                            chartLabels={[
+                                "Label 1",
+                                "Label 2",
+                                "Label 3",
+                                "Label 4",
+                                "Label 5",
+                            ]}
+                            // chartLabels={chartLabels}
+                            chartBackgroundColor={[
+                                "#FF6384",
+                                "#36A2EB",
+                                "#FFCE56",
+                                "#4BC0C0",
+                                "#9966FF",
+                            ]}
+                            hoverOffset={4}
+                        />
+                    )}
+                    {isLineChart && (
+                        <LineChart
+                            chartData={backContent}
+                            chartLabels={[
+                                "Label 1",
+                                "Label 2",
+                                "Label 3",
+                                "Label 4",
+                                "Label 5",
+                                "Label 6",
+                            ]}
+                            lineColor="blue"
+                        />
+                    )}
+                    {isBarChart && (
+                        <BarChart
+                            data={backContent}
+                            labels={[
+                                "Label 1",
+                                "Label 2",
+                                "Label 3",
+                                "Label 4",
+                                "Label 5",
+                            ]}
+                            title="Bar Chart"
+                        />
+                    )}
+                    {!isPieChart && !isLineChart && !isBarChart && backContent}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Card;
+//LocationMap components
+import React, { useState } from "react";
+import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
+// const { NEXT_PUBLIC_MAPS_API_KEY } = process.env;
+
+const LocationMap = ({ latitude, longitude }) => {
+  const containerStyle = {
+    width: "100%",
+    height: "100%",
+  };
+  const [value, setValue] = useState({latitude:12.897510 , longitude:77.613457})
+  const center = {
+    lat: value.latitude,
+    lng: value.longitude,
+  };
+
+  let ApiKey = 'AIzaSyAYX9RFzH6W0FQCNSx9mhw0o6y5qFDFDro'
+
+  return (
+    <LoadScript
+      googleMapsApiKey={ApiKey}
+    >
+      <GoogleMap mapContainerStyle={containerStyle} center={center}  zoom={15}>
+        <MarkerF position={center} />
+      </GoogleMap>
+    </LoadScript>
+  );
+};
+
+export default LocationMap;

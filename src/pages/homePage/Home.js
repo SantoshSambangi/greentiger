@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/navBar/NavBar";
 import "../homePage/home.css";
-import MapMarker from "../../components/chartGraphs/MapMarker";
-// import MyPieChart from "../vehiclePage/MyPieChart";
-// import GoogleMapTracker from "../../components/chartGraphs/Map";
+import LocationMap from "../../components/chartGraphs/LocationMap";
 
 const Home = () => {
   
@@ -48,13 +46,9 @@ const Home = () => {
         <div className="gtTitle">
             <h1>Green Tiger Dashboard</h1>
         </div>
-
-        {/* <GoogleMapTracker/> */}
-
-        <MapMarker/>
-
-        {/* <MyPieChart/> */}
-
+        <div style={{width:"100%", height:"600px"}}>
+          <LocationMap />
+        </div>
         {/* <iframe className="bi-embedded" title="Report Section" 
         width="100vw" height="80vh" src ={data}  allowFullScreen="true"></iframe> */}
       </div>

@@ -1,18 +1,16 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
 
-const PieChart = ({
-    chartData,
-    chartLabels,
-    chartBackgroundColor,
-    hoverOffset,
-}) => {
+const PieChart = (props) => {
+    
+   const {pieChartData,pieChartLabels,pieChartBackgroundColor,hoverOffset,} = props;
+
     const data = {
-        labels: chartLabels,
+        labels: pieChartLabels,
         datasets: [
             {
-                data: chartData,
-                backgroundColor: chartBackgroundColor,
+                data: pieChartData,
+                backgroundColor: pieChartBackgroundColor,
                 hoverOffset: hoverOffset,
             },
         ],
