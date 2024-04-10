@@ -19,7 +19,7 @@
 .vcuRightBlock {
   display: flex;
   justify-content: space-between;
-  gap: 80px;
+  gap: 100px;
   align-items: center;
   padding: 0px 30px;
 }

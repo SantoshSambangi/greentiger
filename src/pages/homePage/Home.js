@@ -15,14 +15,13 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const [latitude, setlatitude] = useState("")
-  const [longitude, setlongitude] = useState("")
-  useEffect(()=>{
-      navigator.geolocation.getCurrentPosition((position) => {
-        setlatitude(position.coords.latitude)
-        setlongitude(position.coords.longitude)
-      })
-  },[])
+  // const [longitude, setlongitude] = useState("")
+  // useEffect(()=>{
+  //     navigator.geolocation.getCurrentPosition((position) => {
+  //       setlatitude(position.coords.latitude)
+  //       setlongitude(position.coords.longitude)
+  //     })
+  // },[])
 
   function fetchData() {
     fetch(`${apiUrl}/analytics/v1/get/${userId}`).then((results) => {

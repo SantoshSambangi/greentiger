@@ -4,7 +4,7 @@ import "../vehiclePage/vehicle.css";
 import FilterBox from "../../components/filterBox/FilterBox";
 import Card from "../../components/cards/Card";
 import { FilterData, vehicleCardData } from "../../data/FilterData";
-import { useDataHook } from "../../providers/AppDataProvider";
+// import { useDataHook } from "../../providers/AppDataProvider";
 
 const VehicleDetails = () => {
     const navigate = useNavigate();
@@ -17,14 +17,15 @@ const VehicleDetails = () => {
         startDate: "",
         endDate: "",
     });
-
-    const btnData = ["Vehicle Details", "Bms Details", "Vcu Details"];
+    console.log(date)
+    const btnData = ["Vehicle Details", "Bms Details", "Vcu Details", "Remote Lock"];
 
     const handleBtn = (item) => {
         const routes = {
             "Vehicle Details": "/vehicledetails",
             "Bms Details": "/bms",
             "Vcu Details": "/vcu",
+            "Remote Lock" : "/remotelock"
         };
         const route = routes[item];
         if (route) {
@@ -42,6 +43,7 @@ const VehicleDetails = () => {
         gender: "",
         profession: "",
     });
+    console.log(filterBmsData)
 
     const handleClearFilters = (filterCategory) => {
         setFilterBmsData((prevData) => {

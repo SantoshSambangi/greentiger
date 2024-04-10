@@ -52,8 +52,7 @@ const LocationMap = () => {
   
   return (
     <LoadScript
-      googleMapsApiKey={ApiKey}
-    >
+      googleMapsApiKey={ApiKey}>
       <GoogleMap mapContainerStyle={containerStyle} center={exactLocation}  zoom={3}>
         <MarkerF position={exactLocation} />
       </GoogleMap>

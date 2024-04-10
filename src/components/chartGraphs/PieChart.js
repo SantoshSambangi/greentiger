@@ -1,5 +1,14 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS, defaults } from "chart.js/auto";
+// import {Chart, } from "chart.js/auto";
+// import { Chart, LinearScale, CategoryScale, BarElement, legend, Title, Tooltip, Legend } from 'chart.js';
+// Chart.register(
+//     LinearScale,CategoryScale,BarElement,Legend,Title,Tooltip
+// )
+
+defaults.maintainAspectRatio = false;
+defaults.responsive = true;
 
 const PieChart = (props) => {
     

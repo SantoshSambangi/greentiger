@@ -8,6 +8,7 @@ import Bms from "./pages/bmsPage/Bms";
 import { DataProvider } from "./providers/AppDataProvider";
 import VehicleDetails from "./pages/vehiclePage/VehicleDetails";
 import PageNotFound404 from "./pages/pageNotFound/PageNotFound404";
+import RemoteLock from "./pages/remotePage/RemoteLock";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/vehicledetails" element={<VehicleDetails />} />
           <Route path="/bms" element={<Bms />} />
           <Route path="/vcu" element={<Vcu />} />
+          <Route path="/remotelock" element={<RemoteLock />} />
           {/* <Route path="/trail" element={<Trail />} /> */}
           <Route path="*" element={<PageNotFound404 />} />
         </Routes>

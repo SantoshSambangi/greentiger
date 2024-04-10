@@ -1,0 +1,17 @@
+.btnRemote{
+    width: 150px;
+    background-color: #601410ff;
+    color: white;
+    font-weight: bold;
+    font-family: "Segoe UI";
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 8px 0px;
+    border-radius: 8px;
+    /* color: var(--color-ref-primary30); */
+}
+
+    /* color:#601410ff;
+    color:#410e0bff;
+    color:#1ea446ff; */
