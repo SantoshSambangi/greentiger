@@ -17,7 +17,9 @@ const Card = (props) => {
         lineChartLabels,
         lineChartData,
         lineChartColor,
-        isGoogleMap
+        isGoogleMap,
+        latitude,
+        longitude
     } = props;
 
     const [isFlipped, setIsFlipped] = useState(false);
@@ -57,7 +59,9 @@ const Card = (props) => {
                         />
                     )}
                     {isGoogleMap && (
-                        <LocationMap />
+                        <LocationMap
+                         latitude={latitude}
+                         longitude={longitude} />
                     )}
 
                     {!isPieChart && !isLineChart &&!isGoogleMap && <p>Loading...</p>}

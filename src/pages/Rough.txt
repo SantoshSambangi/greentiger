@@ -8,6 +8,77 @@ git remote set-url origin https://gitlab.com/yourusername/repositoryname.git
 git push -u origin master
 git remote set-url origin https://gitlab.com/yourusername/repositoryname.git
 
+// Map integration
+
+// MapComponent.js
+
+import React from 'react';
+import { GoogleMap, MarkerF } from '@react-google-maps/api';
+
+const MapComponent = (props) => {
+
+  const {latitude , longitude} = props;
+
+  let ApiKey = 'AIzaSyAYX9RFzH6W0FQCNSx9mhw0o6y5qFDFDro';
+
+  const mapContainerStyle = {
+    width: '100%',
+    height: '400px',
+  };
+
+  const center = {
+    lat: latitude,
+    lng: longitude,
+  };
+
+  return (
+    <LoadScript
+      googleMapsApiKey={ApiKey}>
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          center={center}
+          zoom={15}>
+          <MarkerF position={center} />
+        </GoogleMap>
+    </LoadScript>
+  );
+};
+
+export default MapComponent;
+
+//Another components
+// MapComponent.js
+
+import React from 'react';
+import { GoogleMap, Marker } from '@react-google-maps/api';
+
+const MapComponent = ({ latitude, longitude }) => {
+  const mapContainerStyle = {
+    width: '100%',
+    height: '400px', // Set an appropriate height for your map
+  };
+
+  const center = {
+    lat: latitude,
+    lng: longitude,
+  };
+
+  return (
+    <GoogleMap
+      mapContainerStyle={mapContainerStyle}
+      center={center}
+      zoom={15} // Adjust the zoom level as needed
+      apiKey={process.env.REACT_APP_API_KEY} // Use your API key here
+    >
+      <Marker position={center} />
+    </GoogleMap>
+  );
+};
+
+export default MapComponent;
+
+
+
 //google color codes
 --color-ref-primary0: #000000ff;
     --color-ref-primary10: #041e49ff;

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/navBar/NavBar";
 import "../homePage/home.css";
-import LocationMap from "../../components/chartGraphs/LocationMap";
 
 const Home = () => {
   
-  // Initialize the PublicClientApplication
 
   const apiUrl = process.env.REACT_APP_API_URL;
   const [data, setData] = useState(null);
@@ -15,13 +13,6 @@ const Home = () => {
     fetchData();
   }, []);
 
-  // const [longitude, setlongitude] = useState("")
-  // useEffect(()=>{
-  //     navigator.geolocation.getCurrentPosition((position) => {
-  //       setlatitude(position.coords.latitude)
-  //       setlongitude(position.coords.longitude)
-  //     })
-  // },[])
 
   function fetchData() {
     fetch(`${apiUrl}/analytics/v1/get/${userId}`).then((results) => {
@@ -45,11 +36,6 @@ const Home = () => {
         <div className="gtTitle">
             <h1>Green Tiger Dashboard</h1>
         </div>
-        <div style={{width:"100%", height:"600px"}}>
-          <LocationMap />
-        </div>
-        {/* <iframe className="bi-embedded" title="Report Section" 
-        width="100vw" height="80vh" src ={data}  allowFullScreen="true"></iframe> */}
       </div>
     </>
   );

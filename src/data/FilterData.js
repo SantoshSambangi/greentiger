@@ -100,6 +100,8 @@ export const vehicleCardData = [
       title: 5,
       subTitle: "Current Location",
       // description: <LocationMap />
+      latitude: 12.97675,
+      longitude:77.57528,
   },
   {
       title: "6",

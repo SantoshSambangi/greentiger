@@ -165,6 +165,8 @@ const VehicleDetails = () => {
                                 lineChartData={Array.isArray(item.description) ? item.description : null} 
                                 lineChartLabels={Array.isArray(item.labels) ? item.labels : null}
                                 lineChartColor={Array.isArray(item.colors) ? item.colors[0] : null}
+                                latitude = {item.latitude}
+                                longitude = {item.longitude}
                             />
                         );
                     })}
