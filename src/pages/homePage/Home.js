@@ -4,7 +4,6 @@ import "../homePage/home.css";
 
 const Home = () => {
   
-  // Initialize the PublicClientApplication
 
   const apiUrl = process.env.REACT_APP_API_URL;
   const [data, setData] = useState(null);
@@ -13,6 +12,7 @@ const Home = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
 
   function fetchData() {
     fetch(`${apiUrl}/analytics/v1/get/${userId}`).then((results) => {
@@ -36,9 +36,6 @@ const Home = () => {
         <div className="gtTitle">
             <h1>Green Tiger Dashboard</h1>
         </div>
-        
-        {/* <iframe className="bi-embedded" title="Report Section" 
-        width="100vw" height="80vh" src ={data}  allowFullScreen="true"></iframe> */}
       </div>
     </>
   );

@@ -1,7 +1,3 @@
-import ExpChart from "../components/chartGraphs/ExpChart";
-import LineChart from "../components/chartGraphs/LineChart";
-import PieChart from "../components/chartGraphs/PieChart";
-
 export const FilterData = [
   {
     name: "state",
@@ -73,94 +69,123 @@ export const FilterData = [
 
 export const vehicleCardData = [
   {
-    title: (
-      <div>
-        <h1>0</h1>
-        <h3>Total Distance (Km)</h3>
-      </div>
-    ),
-    description: <ExpChart />,
+      title: 0,
+      subTitle: "Total Distance (Km)",
+      description: [10, 50, 10, 40, 20, 80],
+      labels :["sun","mon","tue","wed","thu","fri"],
+      // colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
   },
   {
-    title: "front content2",
-    description: <LineChart />,
+      title: 0,
+      subTitle: "Carbon Savings",
+      description: [35, 45, 65, 15, 85,65],
+      labels: ["Low Emission", "Medium Emission", "High Emission","Very High Emission","High Emission"],
+      // colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
   },
   {
-    title: "front content3",
-    description: <PieChart />,
+      title: 0,
+      subTitle: "Cost Saving",
+      description: [89, 79, 69, 59, 49],
+      labels: ["Savings1", "Savings2", "Savings3", "Savings4", "Savings5"],
+      colors: ["#ffa500", "#008000", "#0000ff", "#800080"],
   },
   {
-    title: "front content4",
-    description: "back content4",
+      title: "4",
+      subTitle: "Ride Score",
+      description: [250, 660, 850, 630, 259],
+      labels: ["Excellent", "Good", "Average", "Poor","A++"],
+      colors: ["#ff0000", "#ffa500", "#ffff00", "#008000","#ff0000"],
   },
   {
-    title: "front content5",
-    description: "back content5",
+      title: 5,
+      subTitle: "Current Location",
+      // description: <LocationMap />
+      latitude: 12.97675,
+      longitude:77.57528,
   },
   {
-    title: "front content6",
-    description: "back content6",
+      title: "6",
+      subTitle: "Vehicle Score",
+      description: [250, 660, 850, 630, 259],
+      labels: ["Grade A", "Grade B", "Grade C", "Grade D"],
+      colors: ["#ff4500", "#ffd700", "#7cfc00", "#00ffff"],
   },
 ];
+
 
 export const bmsCardData = [
   {
-    title: <div>
-    <h1>0.0</h1>
-    <h3>Average Cell temperature (&deg;c)</h3>
-  </div>,
-    description: <ExpChart/>,
+      title: 0,
+      subTitle: "Total Distance (Km)",
+      description: [10, 50, 10, 40, 20, 80],
+      labels :["sun","mon","tue","wed","thu","fri"],
+      // colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
   },
   {
-    title: "front content2",
-    description: "back content2",
+      title: 0,
+      subTitle: "Carbon Savings",
+      description: [35, 45, 65, 75, 85,65],
+      labels: ["Low Emission", "Medium Emission", "High Emission","Very High Emission","High Emission"],
+      // colors: ["#84fffe", "#9edded", "#dedede", "#4e4e4e"],
   },
   {
-    title: "front content3",
-    description: "back content3",
+      title: 0,
+      subTitle: "Cost Saving",
+      description: [89, 79, 69, 59, 49],
+      labels: ["Savings1", "Savings2", "Savings3", "Savings4", "Savings5"],
+      colors: ["#ffa500", "#008000", "#0000ff", "#800080"],
   },
   {
-    title: "front content4",
-    description: "back content4",
+      title: "4",
+      subTitle: "Ride Score",
+      description: [250, 660, 850, 630, 259],
+      labels: ["Excellent", "Good", "Average", "Poor","A++"],
+      colors: ["#ff0000", "#ffa500", "#ffff00", "#008000","#ff0000"],
   },
   {
-    title: "front content5",
-    description: "back content5",
+      title: 5,
+      subTitle: "Current Location",
+      description: "Back content"
   },
   {
-    title: "front content6",
-    description: "back content6",
+      title: "6",
+      subTitle: "Vehicle Score",
+      description: [250, 660, 850, 630, 259],
+      labels: ["Grade A", "Grade B", "Grade C", "Grade D"],
+      colors: ["#ff4500", "#ffd700", "#7cfc00", "#00ffff"],
   },
 ];
 
+
 export const vcuCardData = [
   {
-    title: (
-      <div>
-        <h1>0.0</h1>
-        <h3>Average Motor temperature (&deg;c)</h3>
-      </div>
-    ),
-    description: "vcu backcontent2",
+    title: 0,
+    subTitle:"Avg Motor temp",
+    description: [35, 45, 65, 75, 85,65],
   },
   {
-    title: "front content2",
-    description: "back content2",
+    title: 0,
+    subTitle: "Avg Controller temp",
+    description: [89, 79, 69, 59, 49,60] ,
   },
   {
-    title: "front content3",
-    description: "back content3",
+    title: 0,
+    subTitle: "Motor Controller Faults",
+    description: [340, 540, 670, 455, 788,345] ,
   },
   {
-    title: "front content4",
-    description: "back content4",
+    title: 0,
+    subTitle: "Iot Devices",
+    description:[340, 540, 670, 455, 788,345],
   },
   {
-    title: "front content5",
-    description: "back content5",
+    title: 0,
+    subTitle: "Valid Data Packets",
+    description:"LineChart will come heare",
   },
   {
-    title: "front content6",
-    description: "back content6",
+    title: 0,
+    subTitle:  "TBC",
+    description:"LineChart will come heare" ,
   },
 ];

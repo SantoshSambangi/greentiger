@@ -12,7 +12,32 @@
   src: url("../src/assets/fonts/Segoe\ UI\ Bold.ttf");
 }
 
-.MuiButtonBase-root {
+/* .MuiButtonBase-root {
   width: 20px !important;
   height: 20px !important;
+} */
+:root{
+  --color-ref-primary10: #041e49ff;
+  --color-ref-primary20: #062e6fff;
+  --color-ref-primary25: #073888ff;
+  --color-ref-primary30: #0842a0ff;
+  --color-ref-primary40: #0b57d0ff;
+  --color-ref-primary50: #1b6ef3ff;
+  --color-ref-primary60: #4c8df6ff;
+  --color-ref-primary70: #7cacf8ff;
+  --color-ref-primary80: #a8c7faff;
+  --color-ref-primary90: #d3e3fdff;
+}
+
+.btnLock{
+  width: 150px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid black;
+  font-size: 16px;
+  padding: 8px 0px;
+  border-radius: 8px;
 }

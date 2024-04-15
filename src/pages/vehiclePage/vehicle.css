@@ -2,6 +2,7 @@
   height: 100vh;
   min-height: 100vh;
   width: 100%;
+  height: 100%;
   background-color: #f2f2f2;
   flex-wrap: wrap;
   /* background-color: black; */
@@ -18,7 +19,7 @@
 .vcuRightBlock {
   display: flex;
   justify-content: space-between;
-  gap: 80px;
+  gap: 100px;
   align-items: center;
   padding: 0px 30px;
 }
@@ -142,9 +143,6 @@ p {
   justify-content: space-between;
   align-items: center;
   margin-inline: 30px;
-}
-.class1{
-  background-color: black;
 }
 
 /* .cardMainContainer {

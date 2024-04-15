@@ -4,7 +4,9 @@ import { VscSearch } from "react-icons/vsc";
 import { CiEraser } from "react-icons/ci";
 
 const FilterBox = (props) => {
+    
     const { title, options, filterBmsData, setFilterBmsData, eraseAll } = props;
+
     const [searchQuery, setSearchQuery] = useState("");
 
     const handleCheckboxChange = (optionValue, name) => {
