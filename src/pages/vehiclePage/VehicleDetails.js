@@ -18,14 +18,13 @@ const VehicleDetails = () => {
         endDate: "",
     });
     console.log(date)
-    const btnData = ["Vehicle Details", "Bms Details", "Vcu Details", "Remote Lock"];
+    const btnData = ["Vehicle Details", "Bms Details", "Vcu Details",];
 
     const handleBtn = (item) => {
         const routes = {
             "Vehicle Details": "/vehicledetails",
             "Bms Details": "/bms",
             "Vcu Details": "/vcu",
-            "Remote Lock" : "/remotelock"
         };
         const route = routes[item];
         if (route) {
